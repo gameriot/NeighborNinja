@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Neighbor Ninja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel='shortcut icon' href='/images/logo.ico' type='image/x-icon'/ >
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.5.0.min.js"></script>
+
+	</head>
+
+	<body>
+
+		<script>
+		Parse.initialize("11Fp4jSC0ji2uKjbB4AGkzgkaLBafLS5ijXqCVU5", "C79RjpmKSbqWFfXZuqmoGrXCphXGu1byfQ5GIJA9");		</script>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Neighbor Ninja</h1>
+				<p>Keeping Your Neighborhood Secure<br />
+				</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form onsubmit="SignUp()"; event.preventDefault(); id="signup-form" method="post">
+				<input type="submit" value="Get Started" />
+			</form>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; Neighbor Ninja 2015</li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+			<script type="text/javascript">
+			function SignUp () {
+				window.location.assign("signup.html");
+			}
+
+		    </script>
+
+	</body>
+</html>
