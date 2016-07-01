@@ -1140,6 +1140,7 @@
 		}
 
 		#footer .copyright {
+			font: inherit;
 			font-size: 0.8em;
 			list-style: none;
 			padding: 0;
@@ -1151,16 +1152,19 @@
 				line-height: 1em;
 				margin: 0 0 0 0.75em;
 				padding: 0 0 0 0.75em;
+				font: inherit;
 			}
 
 				#footer .copyright li:first-child {
 					border-left: 0;
 					margin-left: 0;
 					padding-left: 0;
+					font: inherit;
 				}
 
 			#footer .copyright a {
 				color: inherit;
+				font: inherit;
 			}
 
 		#footer:hover {
