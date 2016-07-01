@@ -14,14 +14,70 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="abt-8w-s4h">
+                                <rect key="frame" x="60" y="206" width="256" height="256"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="poL-VQ-8cH">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-mR-P10">
+                                                <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pGv-Hk-X80">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xoX-Qk-fjB">
+                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r8m-Lf-4rO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cdX-uN-o2o">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                                                <subviews>
+                                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="yOG-oH-85C">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
+                                                                                    </imageView>
+                                                                                </subviews>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="yOG-oH-85C" firstAttribute="centerX" secondItem="cdX-uN-o2o" secondAttribute="centerX" id="MYw-lB-X3G"/>
+                                                                                    <constraint firstItem="yOG-oH-85C" firstAttribute="centerY" secondItem="cdX-uN-o2o" secondAttribute="centerY" id="Zbq-WP-3UW"/>
+                                                                                </constraints>
+                                                                            </stackView>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="r8m-Lf-4rO" firstAttribute="centerY" secondItem="xoX-Qk-fjB" secondAttribute="centerY" id="9nJ-89-ngK"/>
+                                                                    <constraint firstItem="r8m-Lf-4rO" firstAttribute="centerX" secondItem="xoX-Qk-fjB" secondAttribute="centerX" id="d0f-wY-VSi"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.3949075044" blue="0.63709970810000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="abt-8w-s4h" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="10r-XE-xHp"/>
+                            <constraint firstItem="abt-8w-s4h" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gay-lX-fMM"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="256" height="256"/>
+    </resources>
 </document>

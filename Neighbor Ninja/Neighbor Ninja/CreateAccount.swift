@@ -46,77 +46,9 @@ class CreateAccount: UIViewController {
             return;
         }
         
-        // send data
-//        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/userRegister.php")!)
-//        request.HTTPMethod = "POST"
-//        let postString = "name=\(userName)&email=\(userEmail)&password=\(userPassword)&address=\(userAddress)"
-//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-//            guard error == nil && data != nil else {                                                          // check for fundamental networking error
-//                print("error=\(error)")
-//                return
-//            }
-//            
-//            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
-//                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-//                print("response = \(response)")
-//            }
-//            
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString)")
-//        }
-//        task.resume()
-        
-//        //send registration data to server
-//        let myUrl = NSURL(string:"http://localhost:8888/userRegister.php")
-//        let request = NSMutableURLRequest(URL:myUrl!)
-//        request.HTTPMethod = "POST";
-//        
-//        let postString = "name=\(userName)&email=\(userEmail)&password=\(userPassword)&address=(userAddress)"
-//        
-//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-//        
-//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request){data, response, error in
-//            
-//            if error != nil{
-//                print("error=\(error)")
-//                return
-//            }
-//        
-//            do {
-//                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary
-//    
-//                
-//                if let parseJSON = json{
-//                    let resultValue = parseJSON["status"] as? String
-//                    print("result: \(resultValue)")
-//                    
-//                    var isUserRegistered:Bool = false
-//                    if(resultValue=="Success") {
-//                        isUserRegistered=true
-//                    }
-//                    var messageToDisplay:String = parseJSON["message"] as! String!
-//                    if(!isUserRegistered){
-//                        messageToDisplay = parseJSON["message"] as! String!
-//                    }
-//                    dispatch_async(dispatch_get_main_queue(), {
-//                        //confirmation alert
-//                        let myAlert = UIAlertController(title:"Alert", message:messageToDisplay, preferredStyle: UIAlertControllerStyle.Alert)
-//                        let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default){ action in self.dismissViewControllerAnimated(true, completion:nil)}
-//                        myAlert.addAction(okAction)
-//                        self.presentViewController(myAlert,animated:true,completion:nil)
-//                    })
-//                }
-//                
-//            } catch {
-//                print(error)
-//            }
-//            
-//            
-//        }
-//        
-//        
-//        task.resume()
+//        send data
+
+
         
         
 

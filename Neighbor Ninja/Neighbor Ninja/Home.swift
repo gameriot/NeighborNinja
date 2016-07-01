@@ -32,6 +32,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     @IBAction func logoutButton(sender: UIButton) {
+        
         NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
         NSUserDefaults.standardUserDefaults().synchronize()
         self.performSegueWithIdentifier("loginView", sender: self)
