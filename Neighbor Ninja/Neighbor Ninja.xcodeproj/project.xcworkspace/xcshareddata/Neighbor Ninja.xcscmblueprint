@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05" : 0,
+    "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BE5E25FC-21FD-43E7-86F7-1E6E1B93BDF9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05" : "soda-swift\/",
+    "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E" : "NeighborNinja\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Neighbor Ninja",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Neighbor Ninja\/Neighbor Ninja.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gameriot\/NeighborNinja.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/socrata\/soda-swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05"
+    }
+  ]
+}

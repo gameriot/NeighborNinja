@@ -53,7 +53,12 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         self.mapView.setRegion(region, animated: true)
         self.locationManager.stopUpdatingLocation()
-        
+        let currentLat = location!.coordinate.latitude
+        let currentLng = location!.coordinate.longitude
+        NSUserDefaults.standardUserDefaults().setObject(currentLat, forKey: "currentLat")
+        NSUserDefaults.standardUserDefaults().setObject(currentLng, forKey: "currentLng")
+
+
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
@@ -61,6 +66,11 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         print("Errors: " + error.localizedDescription)
     }
     
+    @IBAction func viewButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("hometoview", sender: self)
+    }
     
+    @IBAction func reportButton(sender: AnyObject) {
+    }
     
 }

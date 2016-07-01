@@ -25,6 +25,9 @@
 		2EB762AF1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762AE1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift */; };
 		2EE65B601D26281F00F0FA84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE65B5F1D26281F00F0FA84 /* MapKit.framework */; };
 		2EE65B621D26282500F0FA84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE65B611D26282500F0FA84 /* CoreLocation.framework */; };
+		2EE65B681D26458900F0FA84 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B671D26458900F0FA84 /* MapViewController.swift */; };
+		2EE65B6A1D26459100F0FA84 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B691D26459100F0FA84 /* QueryViewController.swift */; };
+		2EE65B6C1D2646BD00F0FA84 /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B6B1D2646BD00F0FA84 /* SODAClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		2EB762B01D23BAC1005B7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2EE65B5F1D26281F00F0FA84 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2EE65B611D26282500F0FA84 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2EE65B671D26458900F0FA84 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "../../../soda-swift/SODASample/MapViewController.swift"; sourceTree = "<group>"; };
+		2EE65B691D26459100F0FA84 /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryViewController.swift; path = "../../../soda-swift/SODASample/QueryViewController.swift"; sourceTree = "<group>"; };
+		2EE65B6B1D2646BD00F0FA84 /* SODAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SODAClient.swift; path = "../../../soda-swift/SODAKit/SODAClient.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,9 @@
 				2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */,
 				2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */,
 				2E70B0081D23BB9F00A52092 /* Neighbor Ninja-Bridging-Header.h */,
+				2EE65B671D26458900F0FA84 /* MapViewController.swift */,
+				2EE65B691D26459100F0FA84 /* QueryViewController.swift */,
+				2EE65B6B1D2646BD00F0FA84 /* SODAClient.swift */,
 			);
 			path = "Neighbor Ninja";
 			sourceTree = "<group>";
@@ -318,11 +327,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E70B02A1D23BBA000A52092 /* WelcomeScreen.swift in Sources */,
+				2EE65B6A1D26459100F0FA84 /* QueryViewController.swift in Sources */,
 				2E70B01D1D23BBA000A52092 /* AppDelegate.swift in Sources */,
 				2E70B0221D23BBA000A52092 /* Home.swift in Sources */,
+				2EE65B6C1D2646BD00F0FA84 /* SODAClient.swift in Sources */,
 				2E70B0291D23BBA000A52092 /* SWRevealViewController.m in Sources */,
 				2E70B0211D23BBA000A52092 /* CreateAccount.swift in Sources */,
 				2E70B0281D23BBA000A52092 /* SignIn.swift in Sources */,
+				2EE65B681D26458900F0FA84 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

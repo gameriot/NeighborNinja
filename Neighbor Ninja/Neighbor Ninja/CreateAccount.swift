@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class CreateAccount: UIViewController {
+class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var EmailField: UITextField!
@@ -22,11 +23,32 @@ class CreateAccount: UIViewController {
         let userPassword = PasswordField.text!
         let userAddress = AddressField.text!
         
+        var address: String = userAddress
+        var geocoder: CLGeocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address,completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+            if (placemarks?.count > 0) {
+                var topResult: CLPlacemark = (placemarks?[0])!
+                var placemark: MKPlacemark = MKPlacemark(placemark: topResult)
+                let lat = placemark.coordinate.latitude
+                let lng = placemark.coordinate.longitude
+                let addressLat = Float(lat)
+                let addressLng = Float(lng)
+                NSUserDefaults.standardUserDefaults().setFloat(addressLat, forKey: "addressLat")
+                NSUserDefaults.standardUserDefaults().setFloat(addressLng, forKey: "addressLng")
+                print (addressLat)
+                print (addressLng)
+            }
+        })
+        
+            
+        
         // store data
         
         NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
         NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword")
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
+        NSUserDefaults.standardUserDefaults().setObject(userAddress, forKey: "userAddress")
+
 
         NSUserDefaults.standardUserDefaults().synchronize()
         
