@@ -284,6 +284,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="0.3949075044" blue="0.63709970810000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <label key="tableFooterView" hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNb-gO-n8J">
+                            <rect key="frame" x="0.0" y="130" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DetailCell" textLabel="eeN-gq-loq" detailTextLabel="CRn-wt-XeS" style="IBUITableViewCellStyleSubtitle" id="pA0-7K-VsV">
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
@@ -318,13 +325,14 @@
                     <navigationItem key="navigationItem" title="Query" id="2ak-1w-cS5"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="selectedCellLabel" destination="mNb-gO-n8J" id="UB6-OQ-s2G"/>
                         <segue destination="PHY-39-Ua3" kind="show" identifier="viewtoreport" id="Nsx-m0-Ha8"/>
                         <segue destination="rHP-Kr-i5A" kind="show" identifier="viewtohome" id="pYk-TO-ccj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QO-rW-EW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.5" y="91.5"/>
+            <point key="canvasLocation" x="963.5" y="221.5"/>
         </scene>
         <!--Map-->
         <scene sceneID="33N-tc-jB0">
