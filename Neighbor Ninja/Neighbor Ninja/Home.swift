@@ -71,6 +71,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     @IBAction func reportButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("hometoreport", sender: self)
     }
     
 }

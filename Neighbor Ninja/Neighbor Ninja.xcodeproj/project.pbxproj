@@ -28,6 +28,7 @@
 		2EE65B681D26458900F0FA84 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B671D26458900F0FA84 /* MapViewController.swift */; };
 		2EE65B6A1D26459100F0FA84 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B691D26459100F0FA84 /* QueryViewController.swift */; };
 		2EE65B6C1D2646BD00F0FA84 /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B6B1D2646BD00F0FA84 /* SODAClient.swift */; };
+		2EE65B701D27635F00F0FA84 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B6F1D27635F00F0FA84 /* Report.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		2EE65B671D26458900F0FA84 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "../../../soda-swift/SODASample/MapViewController.swift"; sourceTree = "<group>"; };
 		2EE65B691D26459100F0FA84 /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QueryViewController.swift; path = "../../../soda-swift/SODASample/QueryViewController.swift"; sourceTree = "<group>"; };
 		2EE65B6B1D2646BD00F0FA84 /* SODAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SODAClient.swift; path = "../../../soda-swift/SODAKit/SODAClient.swift"; sourceTree = "<group>"; };
+		2EE65B6F1D27635F00F0FA84 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				2EE65B671D26458900F0FA84 /* MapViewController.swift */,
 				2EE65B691D26459100F0FA84 /* QueryViewController.swift */,
 				2EE65B6B1D2646BD00F0FA84 /* SODAClient.swift */,
+				2EE65B6F1D27635F00F0FA84 /* Report.swift */,
 			);
 			path = "Neighbor Ninja";
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E70B02A1D23BBA000A52092 /* WelcomeScreen.swift in Sources */,
+				2EE65B701D27635F00F0FA84 /* Report.swift in Sources */,
 				2EE65B6A1D26459100F0FA84 /* QueryViewController.swift in Sources */,
 				2E70B01D1D23BBA000A52092 /* AppDelegate.swift in Sources */,
 				2E70B0221D23BBA000A52092 /* Home.swift in Sources */,
