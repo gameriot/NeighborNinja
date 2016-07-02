@@ -80,7 +80,7 @@ class QueryViewController: UITableViewController {
     func refresh (sender: AnyObject!) {
         print (addressLat)
         print (addressLng)
-        let cngQuery = client.queryDataset("js8f-yfqf").filter("within_circle(location_1, \(addressLat), \(addressLng), 3218.69) AND crimedescription IS NOT NULL")
+        let cngQuery = client.queryDataset("js8f-yfqf").filter("within_circle(location_1, \(addressLat), \(addressLng), 10000) AND crimedescription IS NOT NULL")
         
         cngQuery.orderDescending("datetime").get { res in
             switch res {

@@ -9,13 +9,25 @@
 import UIKit
 import BTNavigationDropdownMenu
 
-class Report: UIViewController {
+class Report: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var selectedCellLabel: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
+    @IBOutlet weak var picker1: UIPickerView!
+    var picker1Data: [String] = [String]()
+    
+    var locationAnswer = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // input data
+        picker1Data = ["Yes", "No"]
+        
+        //connect data
+        self.picker1.delegate = self
+        self.picker1.dataSource = self
+        
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
         self.navigationController?.navigationBar.translucent = false
@@ -56,5 +68,32 @@ class Report: UIViewController {
         
         self.navigationItem.titleView = menuView
     
+    }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return picker1Data.count;
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return picker1Data[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        if(row == 0)
+        {
+            self.view.backgroundColor = UIColor.whiteColor();
+            var locationAnswer = "Yes"
+        }
+        else if(row == 1)
+        {
+            self.view.backgroundColor = UIColor.redColor();
+            var locationAnswer = "No"
+        }
+    }
+    @IBAction func submitButton(sender: AnyObject) {
     }
 }
