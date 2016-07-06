@@ -70,6 +70,34 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         
 //        send data
 
+        let addressLat = NSUserDefaults.standardUserDefaults().floatForKey("addressLat")
+        let addressLng = NSUserDefaults.standardUserDefaults().floatForKey("addressLng")
+        print (addressLat)
+        print (addressLng)
+        
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/createAcc.php")!)
+        request.HTTPMethod = "POST"
+        let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat)&f=\(addressLng)"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            
+            print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        task.resume()
 
         
         

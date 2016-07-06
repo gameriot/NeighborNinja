@@ -19,6 +19,15 @@ class Report: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var locationAnswer = ""
     
+    override func viewDidAppear(animated: Bool){
+        
+        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if(!isUserLoggedIn){
+            self.performSegueWithIdentifier("reporttohome", sender: self)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // input data

@@ -27,6 +27,15 @@ class QueryViewController: UITableViewController {
     
     var data: [[String: AnyObject]]! = []
                             
+    override func viewDidAppear(animated: Bool){
+        
+        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if(!isUserLoggedIn){
+            self.performSegueWithIdentifier("viewtohome", sender: self)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
