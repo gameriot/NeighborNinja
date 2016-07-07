@@ -352,6 +352,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="descriptionText" destination="MoK-y5-7k4" id="dzz-jG-7uU"/>
                         <outlet property="mapView" destination="n5b-xh-CLx" id="Gqb-ip-q1a"/>
                         <outlet property="myLabel" destination="o4g-ZW-sMu" id="3Ud-dF-q1u"/>
                         <outlet property="myPicker" destination="igt-Ri-1UH" id="0OU-Ww-wwF"/>

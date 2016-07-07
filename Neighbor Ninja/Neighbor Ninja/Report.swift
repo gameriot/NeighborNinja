@@ -13,6 +13,7 @@ import CoreLocation
 
 class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPickerViewDataSource,UIPickerViewDelegate {
     
+    @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var myPicker: UIPickerView!
     let pickerData = ["Arrest","Arson","Assault","Burglary","Robbery","Shooting","Theft","Vandalism","Other","Unknown"]
@@ -93,8 +94,6 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     
     }
 
-    @IBAction func submitButton(sender: AnyObject) {
-    }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
@@ -149,6 +148,7 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blackColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center
+        NSUserDefaults.standardUserDefaults().setObject(titleData, forKey: "reportType")
         
         return pickerLabel
         
@@ -162,5 +162,52 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return 200
     }
-
+    
+    
+    @IBAction func submitButton(sender: AnyObject) {
+        let currentLat = NSUserDefaults.standardUserDefaults().floatForKey("currentLat")
+        let currentLng = NSUserDefaults.standardUserDefaults().floatForKey("currentLng")
+        let type = NSUserDefaults.standardUserDefaults().stringForKey("reportType")
+        
+        let descriptionSent = descriptionText.text
+        
+        
+        print (type)
+        print (currentLat)
+        print (currentLng)
+        print (descriptionSent)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/crimeReport.php")!)
+        request.HTTPMethod = "POST"
+        let postString = "a=\(type)&b=\(currentLat)&c=\(currentLng)&d=\(descriptionSent)"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        self.performSegueWithIdentifier("reporttohome", sender: self)
+        
+        let alert = UIAlertController(title: "Successfully Reported", message: "Suspicious activity was reported, and neighbors have been notified. Stay safe!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            
+            print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
+        }
+        task.resume()
+        
+        
+        
+        
+    }
+    
 }
+
+
+
