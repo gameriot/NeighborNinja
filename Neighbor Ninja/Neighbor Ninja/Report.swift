@@ -11,8 +11,13 @@ import BTNavigationDropdownMenu
 import MapKit
 import CoreLocation
 
-class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIPickerViewDataSource,UIPickerViewDelegate {
     
+    @IBOutlet weak var myLabel: UILabel!
+    @IBOutlet weak var myPicker: UIPickerView!
+    let pickerData = ["Arrest","Arson","Assault","Burglary","Robbery","Shooting","Theft","Vandalism","Other","Unknown"]
+
+    @IBOutlet weak var radiusValue: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
 
@@ -30,7 +35,13 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        myPicker.dataSource = self
+        myPicker.delegate = self
+        
+        
+        var radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
+        self.radiusValue.text = "\(radius) m"
         
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
@@ -101,5 +112,52 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
     {
         print("Errors: " + error.localizedDescription)
+    }
+    
+    //MARK: - Delegates and data sources
+    //MARK: Data Sources
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    //MARK: Delegates
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        myLabel.text = pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = pickerData[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blueColor()])
+        return myTitle
+    }
+    
+    /* better memory management version */
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        var pickerLabel = view as! UILabel!
+        if view == nil {  //if no label there yet
+            pickerLabel = UILabel()
+        }
+        let titleData = pickerData[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blackColor()])
+        pickerLabel!.attributedText = myTitle
+        pickerLabel!.textAlignment = .Center
+        
+        return pickerLabel
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 36.0
+    }
+    // for best use with multitasking , dont use a constant here.
+    //this is for demonstration purposes only.
+    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        return 200
     }
 }
