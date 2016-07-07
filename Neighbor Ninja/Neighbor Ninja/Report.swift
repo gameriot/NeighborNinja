@@ -8,9 +8,14 @@
 
 import UIKit
 import BTNavigationDropdownMenu
+import MapKit
+import CoreLocation
 
-class Report: UIViewController {
+class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    @IBOutlet weak var mapView: MKMapView!
+    let locationManager = CLLocationManager()
+
     @IBOutlet weak var selectedCellLabel: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
@@ -66,9 +71,35 @@ class Report: UIViewController {
         
         
         self.navigationItem.titleView = menuView
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
     
     }
 
     @IBAction func submitButton(sender: AnyObject) {
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations.last
+        let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005))
+        self.mapView.setRegion(region, animated: true)
+        self.locationManager.stopUpdatingLocation()
+        let currentLat = location!.coordinate.latitude
+        let currentLng = location!.coordinate.longitude
+        NSUserDefaults.standardUserDefaults().setObject(currentLat, forKey: "currentLat")
+        NSUserDefaults.standardUserDefaults().setObject(currentLng, forKey: "currentLng")
+        
+        
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    {
+        print("Errors: " + error.localizedDescription)
     }
 }

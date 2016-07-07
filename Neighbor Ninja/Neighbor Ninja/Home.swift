@@ -62,10 +62,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
         
         self.navigationItem.titleView = menuView
-//        nameLabel.font = nameLabel.font.fontWithSize(20)
-//        if let name = NSUserDefaults.standardUserDefaults().stringForKey("userName") {
-//            self.nameLabel.text = "Welcome " + name
-//        }
+
             self.locationManager.delegate = self
             self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
             self.locationManager.requestWhenInUseAuthorization()

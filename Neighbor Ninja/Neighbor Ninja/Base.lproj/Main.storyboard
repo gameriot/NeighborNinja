@@ -237,7 +237,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLS-gZ-pL1">
                                 <rect key="frame" x="8" y="167" width="358" height="30"/>
-                                <state key="normal" title="Change Radius"/>
+                                <color key="backgroundColor" red="1" green="0.3949075044" blue="0.63709970810000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Change Radius">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="changeRadius:" destination="jxf-ls-MU5" eventType="touchUpInside" id="zbF-9m-lhd"/>
                                 </connections>
@@ -291,10 +295,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="n5b-xh-CLx">
-                                <rect key="frame" x="0.0" y="15" width="375" height="288"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYX-oW-lvd">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYX-oW-lvd">
                                 <rect key="frame" x="166" y="191" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -307,11 +308,15 @@
                                     <action selector="submitButton:" destination="PHY-39-Ua3" eventType="touchUpInside" id="kTg-ha-O66"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="n5b-xh-CLx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="288"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="mapView" destination="n5b-xh-CLx" id="Gqb-ip-q1a"/>
                         <outlet property="selectedCellLabel" destination="bYX-oW-lvd" id="Tgh-gR-Luc"/>
                         <segue destination="V1g-87-cfj" kind="show" identifier="reporttoview" id="56W-Vr-Xsw"/>
                         <segue destination="rHP-Kr-i5A" kind="show" identifier="reporttohome" id="AyZ-V9-GRf"/>
@@ -507,10 +512,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="OMH-y2-YQt"/>
-        <segue reference="PUk-Pq-EaS"/>
-        <segue reference="zWM-tT-zae"/>
-        <segue reference="irj-U4-E4Y"/>
+        <segue reference="l2G-Ef-ZEr"/>
         <segue reference="Nwl-gm-1xC"/>
         <segue reference="56W-Vr-Xsw"/>
+        <segue reference="N5b-rR-Laa"/>
+        <segue reference="AyZ-V9-GRf"/>
     </inferredMetricsTieBreakers>
 </document>
