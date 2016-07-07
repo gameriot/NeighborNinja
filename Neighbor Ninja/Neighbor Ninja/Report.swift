@@ -30,8 +30,10 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("loginView", sender: self)
         }
+        self.navigationItem.hidesBackButton = true
         
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,4 +162,5 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return 200
     }
+
 }

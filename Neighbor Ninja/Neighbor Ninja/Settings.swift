@@ -24,7 +24,7 @@ class Settings: UIViewController {
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("loginView", sender: self)
         }
-        
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {

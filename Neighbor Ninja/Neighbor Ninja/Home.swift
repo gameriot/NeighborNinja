@@ -77,6 +77,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("loginView", sender: self)
         }
+        self.navigationItem.hidesBackButton = true
         
     }
     

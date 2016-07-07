@@ -35,7 +35,7 @@ class QueryViewController: UITableViewController {
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("viewtohome", sender: self)
         }
-        
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
