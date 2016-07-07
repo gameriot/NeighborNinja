@@ -51,7 +51,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 self.performSegueWithIdentifier("hometoview", sender: self)
             }
             if self.selectedCellLabel.text == "Settings"{
-                
+                self.performSegueWithIdentifier("hometosettings", sender: self)
             }
             if self.selectedCellLabel.text == "Sign Off"{
                 NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")

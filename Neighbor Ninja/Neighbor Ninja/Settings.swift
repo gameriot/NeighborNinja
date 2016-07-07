@@ -1,17 +1,18 @@
 //
-//  Report.swift
+//  Settings.swift
 //  Neighbor Ninja
 //
-//  Created by Samast Varma on 7/1/16.
+//  Created by Samast Varma on 7/7/16.
 //  Copyright © 2016 Samast Varma. All rights reserved.
 //
 
 import UIKit
 import BTNavigationDropdownMenu
 
-class Report: UIViewController {
+class Settings: UIViewController {
     
     @IBOutlet weak var selectedCellLabel: UILabel!
+    
     var menuView: BTNavigationDropdownMenu!
     
     override func viewDidAppear(animated: Bool){
@@ -22,18 +23,16 @@ class Report: UIViewController {
         }
         
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+    
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
         self.navigationController?.navigationBar.translucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green:100.0/255.0, blue:190.0/255.0, alpha: 1.0)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[1], items: items)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[3], items: items)
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
         menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
@@ -49,13 +48,13 @@ class Report: UIViewController {
             print("Did select item at index: \(indexPath)")
             self.selectedCellLabel.text = items[indexPath]
             if self.selectedCellLabel.text == "Home"{
-                self.performSegueWithIdentifier("reporttohome", sender: self)
+                self.performSegueWithIdentifier("settingstohome", sender: self)
             }
             if self.selectedCellLabel.text == "View"{
-                self.performSegueWithIdentifier("reporttoview", sender: self)
+                self.performSegueWithIdentifier("settingstoview", sender: self)
             }
-            if self.selectedCellLabel.text == "Settings"{
-                self.performSegueWithIdentifier("reporttosettings", sender: self)
+            if self.selectedCellLabel.text == "Report"{
+                self.performSegueWithIdentifier("settingstoreport", sender: self)
             }
             if self.selectedCellLabel.text == "Sign Off"{
                 NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
@@ -66,9 +65,7 @@ class Report: UIViewController {
         
         
         self.navigationItem.titleView = menuView
-    
+        
     }
 
-    @IBAction func submitButton(sender: AnyObject) {
-    }
 }

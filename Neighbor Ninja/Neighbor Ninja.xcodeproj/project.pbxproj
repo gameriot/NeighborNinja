@@ -22,6 +22,7 @@
 		2E70B0281D23BBA000A52092 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0191D23BBA000A52092 /* SignIn.swift */; };
 		2E70B0291D23BBA000A52092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */; };
 		2E70B02A1D23BBA000A52092 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */; };
+		2EA314831D2EEB24000342BD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA314821D2EEB24000342BD /* Settings.swift */; };
 		2EB762A41D23BAC1005B7B93 /* Neighbor_NinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762A31D23BAC1005B7B93 /* Neighbor_NinjaTests.swift */; };
 		2EB762AF1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762AE1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift */; };
 		2EC54BB41D2780BE002412AF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC54BB31D2780BE002412AF /* MapViewController.swift */; };
@@ -71,6 +72,7 @@
 		2E70B01A1D23BBA000A52092 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		2EA314821D2EEB24000342BD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2EB762881D23BAC1005B7B93 /* Neighbor Ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighbor Ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB7629F1D23BAC1005B7B93 /* Neighbor NinjaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neighbor NinjaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB762A31D23BAC1005B7B93 /* Neighbor_NinjaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighbor_NinjaTests.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				2EC54BB71D2780D0002412AF /* SODAClient.swift */,
 				2EC54BB51D2780C8002412AF /* QueryViewController.swift */,
 				2EE65B6F1D27635F00F0FA84 /* Report.swift */,
+				2EA314821D2EEB24000342BD /* Settings.swift */,
 			);
 			path = "Neighbor Ninja";
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				2E70B0221D23BBA000A52092 /* Home.swift in Sources */,
 				2E70B0291D23BBA000A52092 /* SWRevealViewController.m in Sources */,
 				2E70B0211D23BBA000A52092 /* CreateAccount.swift in Sources */,
+				2EA314831D2EEB24000342BD /* Settings.swift in Sources */,
 				2E70B0281D23BBA000A52092 /* SignIn.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

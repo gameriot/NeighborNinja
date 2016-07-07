@@ -215,11 +215,46 @@
                         <segue destination="ivg-uc-hwS" kind="show" identifier="loginView" id="JwG-cd-PN2"/>
                         <segue destination="eE6-Cm-zA6" kind="show" identifier="hometoview" id="EO2-Gp-Oub"/>
                         <segue destination="PHY-39-Ua3" kind="show" identifier="hometoreport" id="xGF-hc-AkZ"/>
+                        <segue destination="jxf-ls-MU5" kind="show" identifier="hometosettings" id="PUk-Pq-EaS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pz6-Mc-CfX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="184.5" y="-1419.5"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="uZR-8a-dim">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="jxf-ls-MU5" customClass="Settings" customModule="Neighbor_Ninja" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SBo-aq-pFP"/>
+                        <viewControllerLayoutGuide type="bottom" id="5YE-c3-c5z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2vb-Im-Map">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-sk-9dR">
+                                <rect key="frame" x="166" y="118" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="selectedCellLabel" destination="qPb-sk-9dR" id="KRR-eL-PZY"/>
+                        <segue destination="rHP-Kr-i5A" kind="show" identifier="settingstohome" id="zWM-tT-zae"/>
+                        <segue destination="eE6-Cm-zA6" kind="show" identifier="settingstoview" id="OMH-y2-YQt"/>
+                        <segue destination="PHY-39-Ua3" kind="show" identifier="settingstoreport" id="Nwl-gm-1xC"/>
+                        <segue destination="jb1-ZM-NAs" kind="show" identifier="loginView" id="irj-U4-E4Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxs-sh-JXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="-2113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ORF-eB-bi0">
@@ -261,11 +296,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K8o-4c-ZHg">
-                                <rect key="frame" x="0.0" y="304" width="375" height="216"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2g-n9-u3c">
-                                <rect key="frame" x="163" y="534" width="49" height="30"/>
+                                <rect key="frame" x="163" y="580" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButton:" destination="PHY-39-Ua3" eventType="touchUpInside" id="kTg-ha-O66"/>
@@ -276,16 +308,16 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="picker1" destination="K8o-4c-ZHg" id="X5P-Q9-jVC"/>
                         <outlet property="selectedCellLabel" destination="bYX-oW-lvd" id="Tgh-gR-Luc"/>
                         <segue destination="V1g-87-cfj" kind="show" identifier="reporttoview" id="56W-Vr-Xsw"/>
                         <segue destination="rHP-Kr-i5A" kind="show" identifier="reporttohome" id="AyZ-V9-GRf"/>
                         <segue destination="jb1-ZM-NAs" kind="show" identifier="loginView" id="N5b-rR-Laa"/>
+                        <segue destination="jxf-ls-MU5" kind="show" identifier="reporttosettings" id="l2G-Ef-ZEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMg-TS-8Y2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2003.5" y="142.5"/>
+            <point key="canvasLocation" x="2055.5" y="58.5"/>
         </scene>
         <!--Query-->
         <scene sceneID="UuD-Kz-xp5">
@@ -343,6 +375,7 @@
                         <outlet property="selectedCellLabel" destination="mNb-gO-n8J" id="UB6-OQ-s2G"/>
                         <segue destination="PHY-39-Ua3" kind="show" identifier="viewtoreport" id="Nsx-m0-Ha8"/>
                         <segue destination="rHP-Kr-i5A" kind="show" identifier="viewtohome" id="pYk-TO-ccj"/>
+                        <segue destination="jxf-ls-MU5" kind="show" identifier="viewtosettings" id="mTo-Mk-58B"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QO-rW-EW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -469,9 +502,11 @@
         <image name="QueryTab" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Nsx-m0-Ha8"/>
+        <segue reference="EO2-Gp-Oub"/>
+        <segue reference="zWM-tT-zae"/>
+        <segue reference="mTo-Mk-58B"/>
         <segue reference="56W-Vr-Xsw"/>
-        <segue reference="N5b-rR-Laa"/>
-        <segue reference="Zza-dw-hkv"/>
+        <segue reference="Nsx-m0-Ha8"/>
+        <segue reference="nl2-bX-PYw"/>
     </inferredMetricsTieBreakers>
 </document>

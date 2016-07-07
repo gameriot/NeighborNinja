@@ -66,7 +66,7 @@ class QueryViewController: UITableViewController {
                 self.performSegueWithIdentifier("viewtohome", sender: self)
             }
             if self.selectedCellLabel.text == "Settings"{
-                
+                self.performSegueWithIdentifier("viewtosettings", sender: self)
             }
             if self.selectedCellLabel.text == "Sign Off"{
                 NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
