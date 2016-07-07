@@ -74,12 +74,6 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
     }
     
-    @IBAction func logoutButton(sender: UIButton) {
-        
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        self.performSegueWithIdentifier("loginView", sender: self)
-    }
     override func viewDidAppear(animated: Bool){
 
         let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
@@ -109,12 +103,5 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         print("Errors: " + error.localizedDescription)
     }
     
-    @IBAction func viewButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("hometoview", sender: self)
-    }
-    
-    @IBAction func reportButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("hometoreport", sender: self)
-    }
     
 }

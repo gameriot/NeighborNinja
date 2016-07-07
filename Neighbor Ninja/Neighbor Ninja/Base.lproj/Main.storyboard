@@ -179,31 +179,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-Mz-nFb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="525"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.37786346209999999" blue="0.43680089" alpha="1" colorSpace="calibratedRGB"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLy-BY-6pj">
-                                <rect key="frame" x="0.0" y="564" width="375" height="42"/>
-                                <color key="backgroundColor" red="1" green="0.3949075044" blue="0.63709970810000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="View Activity">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewButton:" destination="rHP-Kr-i5A" eventType="touchUpInside" id="XIF-Bz-GRX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nW-Xp-aZC">
-                                <rect key="frame" x="0.0" y="523" width="375" height="42"/>
-                                <color key="backgroundColor" red="1" green="0.3949075044" blue="0.63709970810000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Report Activity">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="reportButton:" destination="rHP-Kr-i5A" eventType="touchUpInside" id="aax-Nc-8XE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -234,17 +212,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-sk-9dR">
-                                <rect key="frame" x="166" y="118" width="42" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Radius" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tuf-Am-ffY">
+                                <rect key="frame" x="8" y="114" width="358" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPb-sk-9dR">
+                                <rect key="frame" x="166" y="638" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="viN-Rg-YJd">
+                                <rect key="frame" x="8" y="78" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUG-aO-ykR">
+                                <rect key="frame" x="140" y="78" width="215" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLS-gZ-pL1">
+                                <rect key="frame" x="8" y="167" width="358" height="30"/>
+                                <state key="normal" title="Change Radius"/>
+                                <connections>
+                                    <action selector="changeRadius:" destination="jxf-ls-MU5" eventType="touchUpInside" id="zbF-9m-lhd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="radiusLabel" destination="Tuf-Am-ffY" id="ISN-Ni-Rnu"/>
+                        <outlet property="radiusValue" destination="cUG-aO-ykR" id="7ov-Cs-PkU"/>
                         <outlet property="selectedCellLabel" destination="qPb-sk-9dR" id="KRR-eL-PZY"/>
                         <segue destination="rHP-Kr-i5A" kind="show" identifier="settingstohome" id="zWM-tT-zae"/>
                         <segue destination="eE6-Cm-zA6" kind="show" identifier="settingstoview" id="OMH-y2-YQt"/>
@@ -254,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxs-sh-JXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="788" y="-2113"/>
+            <point key="canvasLocation" x="787.5" y="-2113.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ORF-eB-bi0">
@@ -502,11 +506,11 @@
         <image name="QueryTab" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EO2-Gp-Oub"/>
+        <segue reference="OMH-y2-YQt"/>
+        <segue reference="PUk-Pq-EaS"/>
         <segue reference="zWM-tT-zae"/>
-        <segue reference="mTo-Mk-58B"/>
+        <segue reference="irj-U4-E4Y"/>
+        <segue reference="Nwl-gm-1xC"/>
         <segue reference="56W-Vr-Xsw"/>
-        <segue reference="Nsx-m0-Ha8"/>
-        <segue reference="nl2-bX-PYw"/>
     </inferredMetricsTieBreakers>
 </document>

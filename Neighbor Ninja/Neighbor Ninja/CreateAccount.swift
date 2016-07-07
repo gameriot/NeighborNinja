@@ -35,6 +35,7 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
                 let addressLng = Float(lng)
                 NSUserDefaults.standardUserDefaults().setFloat(addressLat, forKey: "addressLat")
                 NSUserDefaults.standardUserDefaults().setFloat(addressLng, forKey: "addressLng")
+                NSUserDefaults.standardUserDefaults().setObject(10000, forKey: "radius")
                 print (addressLat)
                 print (addressLng)
             }

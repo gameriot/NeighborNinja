@@ -19,6 +19,8 @@ class QueryViewController: UITableViewController {
 
     let addressLat = NSUserDefaults.standardUserDefaults().floatForKey("addressLat")
     let addressLng = NSUserDefaults.standardUserDefaults().floatForKey("addressLng")
+    let radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
+
     
     
     let client = SODAClient(domain: "data.acgov.org", token: "KjCEUpVrY1K2HuxgCbSP8Fdxb")
@@ -89,7 +91,7 @@ class QueryViewController: UITableViewController {
     func refresh (sender: AnyObject!) {
         print (addressLat)
         print (addressLng)
-        let cngQuery = client.queryDataset("js8f-yfqf").filter("within_circle(location_1, \(addressLat), \(addressLng), 10000) AND crimedescription IS NOT NULL")
+        let cngQuery = client.queryDataset("js8f-yfqf").filter("within_circle(location_1, \(addressLat), \(addressLng), \(radius)) AND crimedescription IS NOT NULL")
         
         cngQuery.orderDescending("datetime").get { res in
             switch res {

@@ -13,6 +13,9 @@ class Settings: UIViewController {
     
     @IBOutlet weak var selectedCellLabel: UILabel!
     
+    @IBOutlet weak var radiusLabel: UITextField!
+    
+    @IBOutlet weak var radiusValue: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
     override func viewDidAppear(animated: Bool){
@@ -23,9 +26,13 @@ class Settings: UIViewController {
         }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        var radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
+        
+        self.radiusValue.text = "\(radius) m"
+
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
         self.navigationController?.navigationBar.translucent = false
@@ -66,6 +73,12 @@ class Settings: UIViewController {
         
         self.navigationItem.titleView = menuView
         
+    }
+    
+    @IBAction func changeRadius(sender: AnyObject) {
+        var radius = Float(radiusLabel.text!)
+        NSUserDefaults.standardUserDefaults().setObject(radius, forKey: "radius")
+        self.radiusValue.text = "\(radius) m"
     }
 
 }
