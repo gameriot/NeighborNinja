@@ -41,12 +41,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Create annotations for the data
         var anns : [MKAnnotation] = []
         for item in data {
-            if let loc: AnyObject = item["location_1"] {
+            if let loc: AnyObject = (item["location_1"]!) {
 //                let lat = (item["latitude"]! as! NSString).doubleValue
 //                let lon = (item["longitude"]! as! NSString).doubleValue
 
+                
                 print (loc)
-
+                
+                
                 let lat = Double(addressLat)
                 let lon = Double(addressLng)
                 lata += lat
@@ -57,6 +59,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 anns.append(a)
             }
         }
+        
+
         
         // Set the annotations and center the map
         if (anns.count > 0) {

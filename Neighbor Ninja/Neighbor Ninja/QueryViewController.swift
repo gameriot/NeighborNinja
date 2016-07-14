@@ -20,10 +20,6 @@ class QueryViewController: UITableViewController {
     let addressLat = NSUserDefaults.standardUserDefaults().floatForKey("addressLat")
     let addressLng = NSUserDefaults.standardUserDefaults().floatForKey("addressLng")
     let radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
-
-    
-    
-    
     
     let client = SODAClient(domain: "data.acgov.org", token: "KjCEUpVrY1K2HuxgCbSP8Fdxb")
     
@@ -39,8 +35,10 @@ class QueryViewController: UITableViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
         self.navigationController?.navigationBar.translucent = false
