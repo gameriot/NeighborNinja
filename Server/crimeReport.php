@@ -14,6 +14,7 @@ if (mysqli_connect_errno())
 	$lng = $_POST['c'];
 	$description = $_POST['d'];
 	$rad = $_POST['e'];
+    $userID = $_POST['f'];
 
 $R = 6371;
 
@@ -23,63 +24,26 @@ $R = 6371;
     $maxLng = $lng + rad2deg(asin($rad/$R) / cos(deg2rad($lat)));
     $minLng = $lng - rad2deg(asin($rad/$R) / cos(deg2rad($lat)));
 
-echo $maxLat;
-echo $minLat;
-echo $maxLng;
-echo $minLng;
-echo "...";
+$query = "INSERT INTO `crimereport` (type, lat, lng, description, userID) VALUES ('$type','$lat','$lng','$description', '$userID');";
+$query .= "SELECT ID from `users` WHERE (lat BETWEEN '$minLat' AND '$maxLat') AND (lng BETWEEN '$minLng' AND '$maxLng')";
 
-$sql = "INSERT INTO `crimereporttest` (type, lat, lng, description) VALUES ('$type','$lat','$lng','$description')";
-$sql = "SELECT ID from `users` WHERE (lat BETWEEN '$minLat' AND '$maxLat') AND (lng BETWEEN '$minLng' AND '$maxLng')";
 
-// if (mysqli_multi_query($con, $sql))
-// {
-//   do
-//     {
-//     // Store first result set
-//     if ($result=mysqli_store_result($con)) {
-//       // Fetch one and one row
-//       while ($row=mysqli_fetch_row($result))
-//         {
-//         printf("%s\n",$row[0]);
-//         }
-//       // Free result set
-//       mysqli_free_result($result);
-//       }
-//     }
-//   while (mysqli_next_result($con));
-// }
-// else{
-//   echo ("Error description: " . mysqli_error($con));
-// }
-
-if (mysqli_multi_query($con, $sql)) {
+if (mysqli_multi_query($con, $query)) {
     do {
         /* store first result set */
         if ($result = mysqli_store_result($con)) {
             while ($row = mysqli_fetch_row($result)) {
-                echo "The user within range is ";
                 printf("%s\n", $row[0]);
-
             }
             mysqli_free_result($result);
         }
         /* print divider */
         if (mysqli_more_results($con)) {
             printf("-----------------\n");
-
         }
     } while (mysqli_next_result($con));
 }
 
-// // Check if there are results
-// if ($result = mysqli_query($con, $sql))
-// {
-//     // If so, then create a results array and a temporary one
-//     // to hold the data
-//     echo json_encode(mysqli_num_rows($result));
-// }
-
-// Close connections
-mysqli_close($con);
+/* close connection */
+$mysqli->close();
 ?>

@@ -23,20 +23,7 @@ if ($result = mysqli_query($con, $sql))
 	// to hold the data
 	echo json_encode(mysqli_num_rows($result));
 
-	// echo (mysqli_num_rows($result));
-	// $resultArray = array();
-	// $tempArray = array();
 
-	// Loop through each row in the result set
-	// while($row = $result->fetch_object())
-	// {
-	// 	// Add each row into our results array
-	// 	$tempArray = $row;
-	//     array_push($resultArray, $tempArray);
-	// }
- 
-	// // Finally, encode the array to JSON and output the results
-	// echo json_encode($resultArray);
 }
 
 // echo $sql;

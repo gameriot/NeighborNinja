@@ -169,13 +169,14 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         let currentLng = NSUserDefaults.standardUserDefaults().floatForKey("currentLng")
         let type = NSUserDefaults.standardUserDefaults().stringForKey("reportType")
         let radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
+        let userID = NSUserDefaults.standardUserDefaults().integerForKey("userID")
         let radiusSent = radius/0.000621371
         
         let descriptionSent = descriptionText.text
 
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/crimeReport.php")!)
         request.HTTPMethod = "POST"
-        let postString = "a=\(type)&b=\(currentLat)&c=\(currentLng)&d=\(descriptionSent)&e=\(radiusSent)"
+        let postString = "a=\(type!)&b=\(currentLat)&c=\(currentLng)&d=\(descriptionSent!)&e=\(radiusSent)&f=\(userID)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         self.performSegueWithIdentifier("reporttohome", sender: self)
         

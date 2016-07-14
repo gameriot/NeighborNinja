@@ -20,12 +20,8 @@ class SignIn: UIViewController {
         let userEmail = EmailSignIn.text!
         let userPassword = PasswordSignIn.text!
         
-        let userEmailStored = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")
-        let userPasswordStored = NSUserDefaults.standardUserDefaults().stringForKey("userPassword")
+        NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
         
-//        func get(){
-//            let url = NSURL(string: "http://localhost:8888/loginAcc.php")
-//            let data = NSData(contentsOfURL: url!)
 
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/loginAcc.php")!)
         request.HTTPMethod = "POST"

@@ -18,11 +18,42 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var selectedCellLabel: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
+    let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
+    
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/userID.php")!)
+        request.HTTPMethod = "POST"
+        let postString = "a=\(userEmail)"
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            
+            print("response = \(response)!")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString!)")
+            NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
+            let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
+            
+                    }
+        task.resume()
+        
+    
+    
+        
+        
         mapView.delegate = self
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
