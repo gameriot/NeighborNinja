@@ -1,13 +1,6 @@
-//
-//  MapViewController.swift
-//  SODASample
-//
-//  Created by Frank A. Krueger on 8/10/14.
-//  Copyright (c) 2014 Socrata, Inc. All rights reserved.
-//
-
 import UIKit
 import MapKit
+import Foundation
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
@@ -44,21 +37,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         var lata : CLLocationDegrees = 0.0
         var lona : CLLocationDegrees = 0.0
         
+        
         // Create annotations for the data
         var anns : [MKAnnotation] = []
         for item in data {
             if let loc: AnyObject = item["location_1"] {
 //                let lat = (item["latitude"]! as! NSString).doubleValue
 //                let lon = (item["longitude"]! as! NSString).doubleValue
-//                var latlng = String(item["location_1"]!)
-//                
-//                let indexStartOfText = loc.startIndex.advancedBy(3)
-//                let subString1 = loc.substringFromIndex(indexStartOfText) // Hello>>>
-//                
-//                let indexEndOfText = loc.endIndex.advancedBy(-3)
-//                let subString2 = loc.substringToIndex(indexEndOfText)     // <<<Hello
-//                print (subString1)
-//                print (subString2)
+
+                print (loc)
+
                 let lat = Double(addressLat)
                 let lon = Double(addressLng)
                 lata += lat

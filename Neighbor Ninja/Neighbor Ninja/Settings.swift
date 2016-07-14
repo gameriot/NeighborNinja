@@ -78,7 +78,7 @@ class Settings: UIViewController {
     @IBAction func changeRadius(sender: AnyObject) {
         var radius = Float(radiusLabel.text!)
         NSUserDefaults.standardUserDefaults().setObject(radius, forKey: "radius")
-        self.radiusValue.text = "\(radius) m"
+        self.radiusValue.text = "\(radius!) m"
     }
 
 }
