@@ -23,6 +23,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
         self.navigationController?.navigationBar.translucent = false
@@ -92,9 +93,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         let currentLng = location!.coordinate.longitude
         NSUserDefaults.standardUserDefaults().setObject(currentLat, forKey: "currentLat")
         NSUserDefaults.standardUserDefaults().setObject(currentLng, forKey: "currentLng")
-
-
-    }
+            }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
     {

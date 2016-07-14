@@ -50,8 +50,15 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             if let loc: AnyObject = item["location_1"] {
 //                let lat = (item["latitude"]! as! NSString).doubleValue
 //                let lon = (item["longitude"]! as! NSString).doubleValue
-                let latlng = item["location_1"]!
-                print (latlng)
+//                var latlng = String(item["location_1"]!)
+//                
+//                let indexStartOfText = loc.startIndex.advancedBy(3)
+//                let subString1 = loc.substringFromIndex(indexStartOfText) // Hello>>>
+//                
+//                let indexEndOfText = loc.endIndex.advancedBy(-3)
+//                let subString2 = loc.substringToIndex(indexEndOfText)     // <<<Hello
+//                print (subString1)
+//                print (subString2)
                 let lat = Double(addressLat)
                 let lon = Double(addressLng)
                 lata += lat

@@ -23,6 +23,8 @@ class QueryViewController: UITableViewController {
 
     
     
+    
+    
     let client = SODAClient(domain: "data.acgov.org", token: "KjCEUpVrY1K2HuxgCbSP8Fdxb")
     
     let cellId = "DetailCell"
@@ -30,12 +32,11 @@ class QueryViewController: UITableViewController {
     var data: [[String: AnyObject]]! = []
                             
     override func viewDidAppear(animated: Bool){
-        
+        self.navigationItem.hidesBackButton = true
         let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("viewtohome", sender: self)
         }
-        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
