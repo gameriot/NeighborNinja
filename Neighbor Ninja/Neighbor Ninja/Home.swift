@@ -18,7 +18,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var selectedCellLabel: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
-//    let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
+    //    let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
@@ -26,33 +26,6 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-//        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
-//
-//        let postString = "a=\(userEmail)"
-//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-//        
-//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-//            data, response, error in
-//            
-//            if error != nil {
-//                print("error=\(error)")
-//                return
-//            }
-//            
-//            
-//            print("response = \(response)!")
-//            
-//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//            print("responseString = \(responseString!)")
-//            NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
-//            let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
-//            
-//                    }
-//        task.resume()
-        
-    
-    
         
         
         mapView.delegate = self
@@ -79,7 +52,6 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             self.selectedCellLabel.text = items[indexPath]
             if self.selectedCellLabel.text == "Report"{
                 self.performSegueWithIdentifier("hometoreport", sender: self)
-
             }
             if self.selectedCellLabel.text == "View"{
                 self.performSegueWithIdentifier("hometoview", sender: self)
@@ -93,15 +65,15 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 self.performSegueWithIdentifier("loginView", sender: self)
             }
         }
-
+        
         
         self.navigationItem.titleView = menuView
-
-            self.locationManager.delegate = self
-            self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            self.locationManager.requestWhenInUseAuthorization()
-            self.locationManager.startUpdatingLocation()
-            self.mapView.showsUserLocation = true
+        
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
         
     }
     
@@ -112,37 +84,6 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         }
         else {
             
-//            let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/loginAcc.php")!)
-//            request.HTTPMethod = "POST"
-//            let postString = "a=\(userEmail)&b=\(userPassword)"
-//            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-//            
-//            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-//                data, response, error in
-//                
-//                if error != nil {
-//                    print("error=\(error)")
-//                    return
-//                }
-//                
-//                
-//                print("response = \(response)")
-//                
-//                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                print("responseString = \(responseString)")
-//                print(responseString)
-//                if (responseString == "0"){
-//                    print ("No account")
-//                }
-//                else {
-//                    print ("Account found")
-//                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
-//                    NSUserDefaults.standardUserDefaults().synchronize()
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                }
-//            }
-//            task.resume()
-
             
             let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
             print (userEmail)
@@ -169,13 +110,13 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
                 
             }
             task.resume()
-
+            
         }
         self.navigationItem.hidesBackButton = true
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations.last
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
@@ -186,9 +127,9 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         let currentLng = location!.coordinate.longitude
         NSUserDefaults.standardUserDefaults().setObject(currentLat, forKey: "currentLat")
         NSUserDefaults.standardUserDefaults().setObject(currentLng, forKey: "currentLng")
-            }
+    }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError)
     {
         print("Errors: " + error.localizedDescription)
     }
