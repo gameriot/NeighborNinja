@@ -23,7 +23,7 @@ class SignIn: UIViewController {
         NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
         
 
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/loginAcc.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/loginAcc.php")!)
         request.HTTPMethod = "POST"
         let postString = "a=\(userEmail)&b=\(userPassword)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)

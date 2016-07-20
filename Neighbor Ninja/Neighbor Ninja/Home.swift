@@ -18,37 +18,38 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var selectedCellLabel: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
-    let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
+//    let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
     
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/userID.php")!)
-        request.HTTPMethod = "POST"
-        let postString = "a=\(userEmail)"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            data, response, error in
-            
-            if error != nil {
-                print("error=\(error)")
-                return
-            }
-            
-            
-            print("response = \(response)!")
-            
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString!)")
-            NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
-            let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
-            
-                    }
-        task.resume()
+
+//        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
+//
+//        let postString = "a=\(userEmail)"
+//        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+//        
+//        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+//            data, response, error in
+//            
+//            if error != nil {
+//                print("error=\(error)")
+//                return
+//            }
+//            
+//            
+//            print("response = \(response)!")
+//            
+//            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//            print("responseString = \(responseString!)")
+//            NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
+//            let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
+//            
+//                    }
+//        task.resume()
         
     
     
@@ -78,6 +79,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             self.selectedCellLabel.text = items[indexPath]
             if self.selectedCellLabel.text == "Report"{
                 self.performSegueWithIdentifier("hometoreport", sender: self)
+
             }
             if self.selectedCellLabel.text == "View"{
                 self.performSegueWithIdentifier("hometoview", sender: self)
@@ -104,10 +106,70 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(animated: Bool){
-
         let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
         if(!isUserLoggedIn){
             self.performSegueWithIdentifier("loginView", sender: self)
+        }
+        else {
+            
+//            let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/loginAcc.php")!)
+//            request.HTTPMethod = "POST"
+//            let postString = "a=\(userEmail)&b=\(userPassword)"
+//            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+//            
+//            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+//                data, response, error in
+//                
+//                if error != nil {
+//                    print("error=\(error)")
+//                    return
+//                }
+//                
+//                
+//                print("response = \(response)")
+//                
+//                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//                print("responseString = \(responseString)")
+//                print(responseString)
+//                if (responseString == "0"){
+//                    print ("No account")
+//                }
+//                else {
+//                    print ("Account found")
+//                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
+//                    NSUserDefaults.standardUserDefaults().synchronize()
+//                    self.dismissViewControllerAnimated(true, completion: nil)
+//                }
+//            }
+//            task.resume()
+
+            
+            let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
+            print (userEmail)
+            let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
+            request.HTTPMethod = "POST"
+            let postString = "a=\(userEmail)"
+            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+                data, response, error in
+                
+                if error != nil {
+                    print("error=\(error)")
+                    return
+                }
+                
+                
+                print("response = \(response)!")
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("responseString = \(responseString!)")
+                NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
+                let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
+                
+            }
+            task.resume()
+
         }
         self.navigationItem.hidesBackButton = true
         

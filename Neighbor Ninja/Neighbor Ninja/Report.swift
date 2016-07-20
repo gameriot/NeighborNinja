@@ -174,7 +174,7 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         
         let descriptionSent = descriptionText.text
 
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/crimeReport.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/crimeReport.php")!)
         request.HTTPMethod = "POST"
         let postString = "a=\(type!)&b=\(currentLat)&c=\(currentLng)&d=\(descriptionSent!)&e=\(radiusSent)&f=\(userID)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)

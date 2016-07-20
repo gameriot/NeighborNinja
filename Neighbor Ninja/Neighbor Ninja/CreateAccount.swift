@@ -76,7 +76,7 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         print (addressLat)
         print (addressLng)
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:8888/createAcc.php")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/createAcc.php")!)
         request.HTTPMethod = "POST"
         let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat)&f=\(addressLng)"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)

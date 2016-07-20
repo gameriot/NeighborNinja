@@ -1,7 +1,9 @@
 <?php
+
+require_once('dbconnection.php');  
  
 // Create connection
-$con=mysqli_connect("localhost","root","root","neighborninja");
+$con=mysqli_connect($server,$user,$pword,$database);
  
 // Check connection
 if (mysqli_connect_errno())
