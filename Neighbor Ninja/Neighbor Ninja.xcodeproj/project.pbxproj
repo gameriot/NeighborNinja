@@ -25,6 +25,7 @@
 		2EA314831D2EEB24000342BD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA314821D2EEB24000342BD /* Settings.swift */; };
 		2EB762A41D23BAC1005B7B93 /* Neighbor_NinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762A31D23BAC1005B7B93 /* Neighbor_NinjaTests.swift */; };
 		2EB762AF1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762AE1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift */; };
+		2EC52FF21D4075D400E1CD66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2EC52FF11D4075D400E1CD66 /* GoogleService-Info.plist */; };
 		2EC54BB41D2780BE002412AF /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC54BB31D2780BE002412AF /* MapViewController.swift */; };
 		2EC54BB61D2780C8002412AF /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC54BB51D2780C8002412AF /* QueryViewController.swift */; };
 		2EC54BB81D2780D0002412AF /* SODAClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC54BB71D2780D0002412AF /* SODAClient.swift */; };
@@ -80,6 +81,7 @@
 		2EB762AA1D23BAC1005B7B93 /* Neighbor NinjaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neighbor NinjaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB762AE1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neighbor_NinjaUITests.swift; sourceTree = "<group>"; };
 		2EB762B01D23BAC1005B7B93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EC52FF11D4075D400E1CD66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2EC54BB31D2780BE002412AF /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		2EC54BB51D2780C8002412AF /* QueryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		2EC54BB71D2780D0002412AF /* SODAClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SODAClient.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		2EB7628A1D23BAC1005B7B93 /* Neighbor Ninja */ = {
 			isa = PBXGroup;
 			children = (
+				2EC52FF11D4075D400E1CD66 /* GoogleService-Info.plist */,
 				2E70B0091D23BBA000A52092 /* AppDelegate.swift */,
 				2E70B00A1D23BBA000A52092 /* Assets.xcassets */,
 				2E70B00B1D23BBA000A52092 /* Base.lproj */,
@@ -311,7 +314,15 @@
 				TargetAttributes = {
 					2EB762871D23BAC1005B7B93 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 8MGH2T47Z4;
+						DevelopmentTeam = JV267P8TC6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					2EB7629E1D23BAC1005B7B93 = {
 						CreatedOnToolsVersion = 7.3;
@@ -350,6 +361,7 @@
 			files = (
 				2E70B0241D23BBA000A52092 /* conn.php in Resources */,
 				2E70B0231D23BBA000A52092 /* Info.plist in Resources */,
+				2EC52FF21D4075D400E1CD66 /* GoogleService-Info.plist in Resources */,
 				2E70B0271D23BBA000A52092 /* userRegister.php in Resources */,
 				2E70B0251D23BBA000A52092 /* MySQLDao.php in Resources */,
 				2E70B0201D23BBA000A52092 /* Main.storyboard in Resources */,
@@ -663,7 +675,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Neighbor Ninja/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Samast-Varma.Neighbor-Ninja";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnninja.NeighborNinja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbor Ninja/Neighbor Ninja-Bridging-Header.h";
@@ -681,7 +693,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Neighbor Ninja/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Samast-Varma.Neighbor-Ninja";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getnninja.NeighborNinja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbor Ninja/Neighbor Ninja-Bridging-Header.h";

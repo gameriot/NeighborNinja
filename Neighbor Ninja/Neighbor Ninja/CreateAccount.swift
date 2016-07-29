@@ -36,8 +36,8 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
                 NSUserDefaults.standardUserDefaults().setFloat(addressLat, forKey: "addressLat")
                 NSUserDefaults.standardUserDefaults().setFloat(addressLng, forKey: "addressLng")
                 NSUserDefaults.standardUserDefaults().setObject(10000, forKey: "radius")
-                print (addressLat)
-                print (addressLng)
+//                print (addressLat)
+//                print (addressLng)
             }
         })
         
@@ -49,36 +49,19 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword")
         NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
         NSUserDefaults.standardUserDefaults().setObject(userAddress, forKey: "userAddress")
-
-
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
-        func displayMyAlertMessage(userMessage:String) {
-            let myAlert = UIAlertController(title:"Alert", message:userMessage, preferredStyle: UIAlertControllerStyle.Alert)
-            let okAction = UIAlertAction(title:"Ok", style:UIAlertActionStyle.Default, handler:nil);
-            
-            myAlert.addAction(okAction);
-            
-            self.presentViewController(myAlert, animated: true, completion: nil)
-        }
-        
-        
-        if(userName.isEmpty || userPassword.isEmpty || userEmail.isEmpty || userAddress.isEmpty) {
-            // display error message
-            displayMyAlertMessage("All fields must be completed.")
-            return;
-        }
         
 //        send data
-
+//
         let addressLat = NSUserDefaults.standardUserDefaults().floatForKey("addressLat")
         let addressLng = NSUserDefaults.standardUserDefaults().floatForKey("addressLng")
         print (addressLat)
         print (addressLng)
+
         
         let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/createAcc.php")!)
         request.HTTPMethod = "POST"
-        let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat)&f=\(addressLng)"
+        let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat))&f=\(addressLng)"
+        print (postString)
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {

@@ -29,10 +29,10 @@ class QueryViewController: UITableViewController {
                             
     override func viewDidAppear(animated: Bool){
         self.navigationItem.hidesBackButton = true
-        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
-        if(!isUserLoggedIn){
-            self.performSegueWithIdentifier("viewtohome", sender: self)
-        }
+//        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+//        if(!isUserLoggedIn){
+//            self.performSegueWithIdentifier("viewtohome", sender: self)
+//        }
     }
     
     

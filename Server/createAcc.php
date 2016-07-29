@@ -17,6 +17,9 @@ if (mysqli_connect_errno())
 	$lat = $_POST['e'];
 	$lng = $_POST['f'];
 
+echo $lat;
+echo $lng;
+
 $query = "INSERT INTO users (name, email, password, address, lat, lng) VALUES ('$name','$email','$pass','$address', '$lat', '$lng')";
 
 if (!mysqli_query($con, $query)) 
