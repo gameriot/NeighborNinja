@@ -10,6 +10,10 @@ import UIKit
 
 class WelcomeScreen: UIViewController {
     
+    override func viewDidLoad() {
+        //Check if login
+    }
+    
 
     @IBAction func CreateAccButton(sender: UIButton) {
         self.performSegueWithIdentifier("WelcometoCreate", sender: self)
@@ -19,4 +23,4 @@ class WelcomeScreen: UIViewController {
         self.performSegueWithIdentifier("WelcometoSign", sender: self)
     }
         
-    }
+}

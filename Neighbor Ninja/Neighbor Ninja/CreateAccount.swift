@@ -91,6 +91,22 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        var swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "unwindSegue")
+        swipe.direction = .Right
+        view.addGestureRecognizer(swipe)
+    }
+    
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func unwindSegue(){
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

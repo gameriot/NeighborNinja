@@ -75,6 +75,9 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         self.locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
+        self.navigationItem.hidesBackButton = true
+
+        
     }
     
     override func viewDidAppear(animated: Bool){
@@ -112,7 +115,6 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
             task.resume()
             
         }
-        self.navigationItem.hidesBackButton = true
         
     }
     
