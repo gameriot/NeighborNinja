@@ -49,12 +49,36 @@ class SignIn: UIViewController {
                 print ("Account found")
                 NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
                 NSUserDefaults.standardUserDefaults().synchronize()
-                self.dismissViewControllerAnimated(true, completion: nil)
+                
+                self.performSegueWithIdentifier("loginToMain", sender: nil)
             }
         }
         task.resume()
 
         }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
+        var swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "unwindSegue")
+        swipe.direction = .Right
+        view.addGestureRecognizer(swipe)
+        
+        EmailSignIn.becomeFirstResponder()
+    }
+    
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func unwindSegue(){
+        self.performSegueWithIdentifier("unwindLogin", sender: nil)
+    }
+
     
 }

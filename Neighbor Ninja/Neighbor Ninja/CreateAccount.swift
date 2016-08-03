@@ -98,6 +98,8 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         var swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "unwindSegue")
         swipe.direction = .Right
         view.addGestureRecognizer(swipe)
+        
+        NameField.becomeFirstResponder()
     }
     
     func DismissKeyboard(){
@@ -106,12 +108,16 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     }
     
     func unwindSegue(){
-        self.dismissViewControllerAnimated(false, completion: nil)
+        self.performSegueWithIdentifier("unwindCreate", sender: nil)
+        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 }
 

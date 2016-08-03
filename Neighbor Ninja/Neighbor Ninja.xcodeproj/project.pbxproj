@@ -15,10 +15,6 @@
 		2E70B0211D23BBA000A52092 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0101D23BBA000A52092 /* CreateAccount.swift */; };
 		2E70B0221D23BBA000A52092 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0111D23BBA000A52092 /* Home.swift */; };
 		2E70B0231D23BBA000A52092 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B0121D23BBA000A52092 /* Info.plist */; };
-		2E70B0241D23BBA000A52092 /* conn.php in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B0151D23BBA000A52092 /* conn.php */; };
-		2E70B0251D23BBA000A52092 /* MySQLDao.php in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B0161D23BBA000A52092 /* MySQLDao.php */; };
-		2E70B0261D23BBA000A52092 /* userLogin.php in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B0171D23BBA000A52092 /* userLogin.php */; };
-		2E70B0271D23BBA000A52092 /* userRegister.php in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B0181D23BBA000A52092 /* userRegister.php */; };
 		2E70B0281D23BBA000A52092 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0191D23BBA000A52092 /* SignIn.swift */; };
 		2E70B0291D23BBA000A52092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */; };
 		2E70B02A1D23BBA000A52092 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */; };
@@ -65,10 +61,6 @@
 		2E70B0111D23BBA000A52092 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		2E70B0121D23BBA000A52092 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E70B0131D23BBA000A52092 /* NeighborNinja-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NeighborNinja-Bridging-Header.h"; sourceTree = "<group>"; };
-		2E70B0151D23BBA000A52092 /* conn.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = conn.php; sourceTree = "<group>"; };
-		2E70B0161D23BBA000A52092 /* MySQLDao.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = MySQLDao.php; sourceTree = "<group>"; };
-		2E70B0171D23BBA000A52092 /* userLogin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = userLogin.php; sourceTree = "<group>"; };
-		2E70B0181D23BBA000A52092 /* userRegister.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = userRegister.php; sourceTree = "<group>"; };
 		2E70B0191D23BBA000A52092 /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		2E70B01A1D23BBA000A52092 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -149,15 +141,14 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
-		2E70B0141D23BBA000A52092 /* Server */ = {
+		2E9DA8971D517AC20077F5C7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				2E70B0151D23BBA000A52092 /* conn.php */,
-				2E70B0161D23BBA000A52092 /* MySQLDao.php */,
-				2E70B0171D23BBA000A52092 /* userLogin.php */,
-				2E70B0181D23BBA000A52092 /* userRegister.php */,
+				2E70B0191D23BBA000A52092 /* SignIn.swift */,
+				2E70B0101D23BBA000A52092 /* CreateAccount.swift */,
+				2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */,
 			);
-			path = Server;
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		2EB7627F1D23BAC1005B7B93 = {
@@ -191,15 +182,12 @@
 				2E70B0091D23BBA000A52092 /* AppDelegate.swift */,
 				2E70B00A1D23BBA000A52092 /* Assets.xcassets */,
 				2E70B00B1D23BBA000A52092 /* Base.lproj */,
-				2E70B0101D23BBA000A52092 /* CreateAccount.swift */,
 				2E70B0111D23BBA000A52092 /* Home.swift */,
 				2E70B0121D23BBA000A52092 /* Info.plist */,
 				2E70B0131D23BBA000A52092 /* NeighborNinja-Bridging-Header.h */,
-				2E70B0141D23BBA000A52092 /* Server */,
-				2E70B0191D23BBA000A52092 /* SignIn.swift */,
+				2E9DA8971D517AC20077F5C7 /* Onboarding */,
 				2E70B01A1D23BBA000A52092 /* SWRevealViewController.h */,
 				2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */,
-				2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */,
 				2E70B0081D23BB9F00A52092 /* Neighbor Ninja-Bridging-Header.h */,
 				2EC54BB31D2780BE002412AF /* MapViewController.swift */,
 				2EC54BB71D2780D0002412AF /* SODAClient.swift */,
@@ -359,13 +347,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E70B0241D23BBA000A52092 /* conn.php in Resources */,
 				2E70B0231D23BBA000A52092 /* Info.plist in Resources */,
 				2EC52FF21D4075D400E1CD66 /* GoogleService-Info.plist in Resources */,
-				2E70B0271D23BBA000A52092 /* userRegister.php in Resources */,
-				2E70B0251D23BBA000A52092 /* MySQLDao.php in Resources */,
 				2E70B0201D23BBA000A52092 /* Main.storyboard in Resources */,
-				2E70B0261D23BBA000A52092 /* userLogin.php in Resources */,
 				2E70B01E1D23BBA000A52092 /* Assets.xcassets in Resources */,
 				2E70B01F1D23BBA000A52092 /* LaunchScreen.storyboard in Resources */,
 			);
