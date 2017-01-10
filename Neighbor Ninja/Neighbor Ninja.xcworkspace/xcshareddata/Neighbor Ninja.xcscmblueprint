@@ -1,20 +1,22 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D4CA9FB027EBA63851504D4EC92E9AB6E864B206",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05" : 0,
-    "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E" : 0
+    "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E" : 0,
+    "D4CA9FB027EBA63851504D4EC92E9AB6E864B206" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AF7E34AD-D795-47FB-BA08-8DAB84BB4DEA",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05" : "soda-swift\/",
-    "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E" : "NeighborNinja\/"
+    "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05" : "..\/soda-swift",
+    "2EAC4A28E632C309C79138FCF85A388C2C0FFF2E" : "",
+    "D4CA9FB027EBA63851504D4EC92E9AB6E864B206" : "Neighbor%20Ninja\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Neighbor Ninja",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Neighbor Ninja\/Neighbor Ninja.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Neighbor Ninja.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/gameriot\/NeighborNinja.git",
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/socrata\/soda-swift.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A4CDAFAA049EBB81787491A5F6D706F0CEC20F05"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/RoThePro\/Neighbor-Ninja.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4CA9FB027EBA63851504D4EC92E9AB6E864B206"
     }
   ]
 }

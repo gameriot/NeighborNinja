@@ -18,55 +18,55 @@ class Settings: UIViewController {
     @IBOutlet weak var radiusValue: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
-    override func viewDidAppear(animated: Bool){
+    override func viewDidAppear(_ animated: Bool){
         
-        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(!isUserLoggedIn){
-            self.performSegueWithIdentifier("loginView", sender: self)
+            self.performSegue(withIdentifier: "loginView", sender: self)
         }
         self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
+        var radius = UserDefaults.standard.float(forKey: "radius")
         
         self.radiusValue.text = "\(radius) m"
 
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green:100.0/255.0, blue:190.0/255.0, alpha: 1.0)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[3], items: items)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[3], items: items as [AnyObject])
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
         menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
-        menuView.keepSelectedCellColor = true
-        menuView.cellTextLabelColor = UIColor.whiteColor()
+        menuView.shouldKeepSelectedCellColor = true
+        menuView.cellTextLabelColor = UIColor.white
         menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
-        menuView.cellTextLabelAlignment = .Left // .Center // .Right // .Left
+        menuView.cellTextLabelAlignment = .left // .Center // .Right // .Left
         menuView.arrowPadding = 15
         menuView.animationDuration = 0.5
-        menuView.maskBackgroundColor = UIColor.blackColor()
+        menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.3
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
             self.selectedCellLabel.text = items[indexPath]
             if self.selectedCellLabel.text == "Home"{
-                self.performSegueWithIdentifier("settingstohome", sender: self)
+                self.performSegue(withIdentifier: "settingstohome", sender: self)
             }
             if self.selectedCellLabel.text == "View"{
-                self.performSegueWithIdentifier("settingstoview", sender: self)
+                self.performSegue(withIdentifier: "settingstoview", sender: self)
             }
             if self.selectedCellLabel.text == "Report"{
-                self.performSegueWithIdentifier("settingstoreport", sender: self)
+                self.performSegue(withIdentifier: "settingstoreport", sender: self)
             }
             if self.selectedCellLabel.text == "Sign Off"{
-                NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
-                self.performSegueWithIdentifier("loginView", sender: self)
+                UserDefaults.standard.set(false, forKey:"isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+                self.performSegue(withIdentifier: "loginView", sender: self)
             }
         }
         
@@ -75,9 +75,9 @@ class Settings: UIViewController {
         
     }
     
-    @IBAction func changeRadius(sender: AnyObject) {
-        var radius = Float(radiusLabel.text!)
-        NSUserDefaults.standardUserDefaults().setObject(radius, forKey: "radius")
+    @IBAction func changeRadius(_ sender: AnyObject) {
+        let radius = Float(radiusLabel.text!)
+        UserDefaults.standard.set(radius, forKey: "radius")
         self.radiusValue.text = "\(radius!) m"
     }
 

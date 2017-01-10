@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0820"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECEDDF33BE538214EACE29330302C2F4"
+               BlueprintIdentifier = "D9D499743BF186F3D3A95C77B61D9476"
                BuildableName = "Pods_Neighbor_Ninja.framework"
                BlueprintName = "Pods-Neighbor Ninja"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ECEDDF33BE538214EACE29330302C2F4"
+            BlueprintIdentifier = "D9D499743BF186F3D3A95C77B61D9476"
             BuildableName = "Pods_Neighbor_Ninja.framework"
             BlueprintName = "Pods-Neighbor Ninja"
             ReferencedContainer = "container:Pods.xcodeproj">

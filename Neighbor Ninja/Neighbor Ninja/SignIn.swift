@@ -12,7 +12,7 @@ class SignIn: UIViewController {
 
     @IBOutlet weak var EmailSignIn: UITextField!
     @IBOutlet weak var PasswordSignIn: UITextField!
-    @IBAction func SignInButton(sender: UIButton) {
+    @IBAction func SignInButton(_ sender: UIButton) {
         
         var email = self.EmailSignIn.text
         var password = self.PasswordSignIn.text
@@ -20,15 +20,14 @@ class SignIn: UIViewController {
         let userEmail = EmailSignIn.text!
         let userPassword = PasswordSignIn.text!
         
-        NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
+        UserDefaults.standard.set(userEmail, forKey: "userEmail")
         
-
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/loginAcc.php")!)
-        request.HTTPMethod = "POST"
+        var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/loginAcc.php")!)
+        request.httpMethod = "POST"
         let postString = "a=\(userEmail)&b=\(userPassword)"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        request.httpBody = postString.data(using: String.Encoding.utf8)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {
             data, response, error in
             
             if error != nil {
@@ -39,7 +38,7 @@ class SignIn: UIViewController {
             
             print("response = \(response)")
             
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("responseString = \(responseString)")
             print(responseString)
             if (responseString == "0"){
@@ -47,12 +46,12 @@ class SignIn: UIViewController {
             }
             else {
                 print ("Account found")
-                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
                 
-                self.performSegueWithIdentifier("loginToMain", sender: nil)
+                self.performSegue(withIdentifier: "loginToMain", sender: nil)
             }
-        }
+        }) 
         task.resume()
 
         }
@@ -61,11 +60,11 @@ class SignIn: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignIn.DismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        var swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "unwindSegue")
-        swipe.direction = .Right
+        let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(SignIn.unwindSegue))
+        swipe.direction = .right
         view.addGestureRecognizer(swipe)
         
         EmailSignIn.becomeFirstResponder()
@@ -77,7 +76,7 @@ class SignIn: UIViewController {
     }
     
     func unwindSegue(){
-        self.performSegueWithIdentifier("unwindLogin", sender: nil)
+        self.performSegue(withIdentifier: "unwindLogin", sender: nil)
     }
 
     

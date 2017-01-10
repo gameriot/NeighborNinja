@@ -11,17 +11,23 @@ import UIKit
 class WelcomeScreen: UIViewController {
     
     override func viewDidLoad() {
-        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(isUserLoggedIn){
             
-            let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
+            let userEmail = UserDefaults.standard.string(forKey: "userEmail")!
             print (userEmail)
-            let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
-            request.HTTPMethod = "POST"
+            var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
+            request.httpMethod = "POST"
             let postString = "a=\(userEmail)"
-            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+            request.httpBody = postString.data(using: String.Encoding.utf8)
             
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            
+//            var request = URLRequest(url: URL(string: "http://example.com")!)
+//            request.httpMethod = "POST"
+//            
+//            URLSession.shared.dataTask(with: request) {data, response, err in
+            
+            let task = URLSession.shared.dataTask(with: request, completionHandler: {
                 data, response, error in
                 
                 if error != nil {
@@ -32,30 +38,30 @@ class WelcomeScreen: UIViewController {
                 
                 print("response = \(response)!")
                 
-                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print("responseString = \(responseString!)")
-                NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
+                UserDefaults.standard.set(responseString, forKey: "userID")
                 //let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
                 
-            }
+            }) 
             task.resume()
             
-            self.performSegueWithIdentifier("loginSegue", sender: self)
+            self.performSegue(withIdentifier: "loginSegue", sender: self)
 
             
         }
     }
     
 
-    @IBAction func CreateAccButton(sender: UIButton) {
-        self.performSegueWithIdentifier("WelcometoCreate", sender: self)
+    @IBAction func CreateAccButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "WelcometoCreate", sender: self)
     }
     
-    @IBAction func SignInButton(sender: UIButton) {
-        self.performSegueWithIdentifier("WelcometoSign", sender: self)
+    @IBAction func SignInButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "WelcometoSign", sender: self)
     }
     
-    @IBAction func unwindToWelcome(segue: UIStoryboardSegue){
+    @IBAction func unwindToWelcome(_ segue: UIStoryboardSegue){
         
     }
 }

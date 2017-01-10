@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2591DF413186ACD1BAC74D95 /* Pods_Neighbor_Ninja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE084844110FCC456926E47 /* Pods_Neighbor_Ninja.framework */; };
+		2E487CEB1E23782200CBD901 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E487CEA1E23782200CBD901 /* WelcomeScreen.swift */; };
 		2E70B01D1D23BBA000A52092 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0091D23BBA000A52092 /* AppDelegate.swift */; };
 		2E70B01E1D23BBA000A52092 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B00A1D23BBA000A52092 /* Assets.xcassets */; };
 		2E70B01F1D23BBA000A52092 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B00C1D23BBA000A52092 /* LaunchScreen.storyboard */; };
 		2E70B0201D23BBA000A52092 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B00E1D23BBA000A52092 /* Main.storyboard */; };
 		2E70B0211D23BBA000A52092 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0101D23BBA000A52092 /* CreateAccount.swift */; };
 		2E70B0221D23BBA000A52092 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0111D23BBA000A52092 /* Home.swift */; };
-		2E70B0231D23BBA000A52092 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E70B0121D23BBA000A52092 /* Info.plist */; };
 		2E70B0281D23BBA000A52092 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B0191D23BBA000A52092 /* SignIn.swift */; };
 		2E70B0291D23BBA000A52092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */; };
-		2E70B02A1D23BBA000A52092 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */; };
 		2EA314831D2EEB24000342BD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA314821D2EEB24000342BD /* Settings.swift */; };
 		2EB762A41D23BAC1005B7B93 /* Neighbor_NinjaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762A31D23BAC1005B7B93 /* Neighbor_NinjaTests.swift */; };
 		2EB762AF1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB762AE1D23BAC1005B7B93 /* Neighbor_NinjaUITests.swift */; };
@@ -28,8 +26,7 @@
 		2EE65B601D26281F00F0FA84 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE65B5F1D26281F00F0FA84 /* MapKit.framework */; };
 		2EE65B621D26282500F0FA84 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE65B611D26282500F0FA84 /* CoreLocation.framework */; };
 		2EE65B701D27635F00F0FA84 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE65B6F1D27635F00F0FA84 /* Report.swift */; };
-		3C8D01C26605C2449F37CF4C /* Pods_Neighbor_NinjaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036DB6E10368562CD05441CA /* Pods_Neighbor_NinjaTests.framework */; };
-		B0008B1315B636238482C26D /* Pods_Neighbor_NinjaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60850FB55BF51EE2422175A1 /* Pods_Neighbor_NinjaUITests.framework */; };
+		923F112E6945B59AE06285C4 /* Pods_Neighbor_Ninja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE084844110FCC456926E47 /* Pods_Neighbor_Ninja.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +49,7 @@
 /* Begin PBXFileReference section */
 		036DB6E10368562CD05441CA /* Pods_Neighbor_NinjaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighbor_NinjaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2AAF3E6C89C4438E76DDB4 /* Pods-Neighbor Ninja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbor Ninja.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbor Ninja/Pods-Neighbor Ninja.debug.xcconfig"; sourceTree = "<group>"; };
+		2E487CEA1E23782200CBD901 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		2E70B0081D23BB9F00A52092 /* Neighbor Ninja-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Neighbor Ninja-Bridging-Header.h"; sourceTree = "<group>"; };
 		2E70B0091D23BBA000A52092 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E70B00A1D23BBA000A52092 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 		2E70B0191D23BBA000A52092 /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		2E70B01A1D23BBA000A52092 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		2E70B01B1D23BBA000A52092 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		2EA314821D2EEB24000342BD /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2EB762881D23BAC1005B7B93 /* Neighbor Ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Neighbor Ninja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB7629F1D23BAC1005B7B93 /* Neighbor NinjaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Neighbor NinjaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,13 +77,9 @@
 		2EE65B5F1D26281F00F0FA84 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2EE65B611D26282500F0FA84 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2EE65B6F1D27635F00F0FA84 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
-		383557B27AE0EA7E626A97DE /* Pods-Neighbor NinjaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbor NinjaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbor NinjaTests/Pods-Neighbor NinjaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3F84466A8F2E42806EC3ED05 /* Pods-Neighbor NinjaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbor NinjaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbor NinjaTests/Pods-Neighbor NinjaTests.release.xcconfig"; sourceTree = "<group>"; };
 		4CE084844110FCC456926E47 /* Pods_Neighbor_Ninja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighbor_Ninja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60850FB55BF51EE2422175A1 /* Pods_Neighbor_NinjaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neighbor_NinjaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		867311362C9CF0BFC8E5892C /* Pods-Neighbor Ninja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbor Ninja.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbor Ninja/Pods-Neighbor Ninja.release.xcconfig"; sourceTree = "<group>"; };
-		B3A04D1300A64529FD2898FA /* Pods-Neighbor NinjaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbor NinjaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbor NinjaUITests/Pods-Neighbor NinjaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F751803AC9A21023E69F148E /* Pods-Neighbor NinjaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neighbor NinjaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Neighbor NinjaUITests/Pods-Neighbor NinjaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +89,7 @@
 			files = (
 				2EE65B621D26282500F0FA84 /* CoreLocation.framework in Frameworks */,
 				2EE65B601D26281F00F0FA84 /* MapKit.framework in Frameworks */,
-				2591DF413186ACD1BAC74D95 /* Pods_Neighbor_Ninja.framework in Frameworks */,
+				923F112E6945B59AE06285C4 /* Pods_Neighbor_Ninja.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C8D01C26605C2449F37CF4C /* Pods_Neighbor_NinjaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0008B1315B636238482C26D /* Pods_Neighbor_NinjaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,10 +115,6 @@
 			children = (
 				0B2AAF3E6C89C4438E76DDB4 /* Pods-Neighbor Ninja.debug.xcconfig */,
 				867311362C9CF0BFC8E5892C /* Pods-Neighbor Ninja.release.xcconfig */,
-				383557B27AE0EA7E626A97DE /* Pods-Neighbor NinjaTests.debug.xcconfig */,
-				3F84466A8F2E42806EC3ED05 /* Pods-Neighbor NinjaTests.release.xcconfig */,
-				B3A04D1300A64529FD2898FA /* Pods-Neighbor NinjaUITests.debug.xcconfig */,
-				F751803AC9A21023E69F148E /* Pods-Neighbor NinjaUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -144,9 +131,9 @@
 		2E9DA8971D517AC20077F5C7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				2E487CEA1E23782200CBD901 /* WelcomeScreen.swift */,
 				2E70B0191D23BBA000A52092 /* SignIn.swift */,
 				2E70B0101D23BBA000A52092 /* CreateAccount.swift */,
-				2E70B01C1D23BBA000A52092 /* WelcomeScreen.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -253,12 +240,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EB762B61D23BAC1005B7B93 /* Build configuration list for PBXNativeTarget "Neighbor NinjaTests" */;
 			buildPhases = (
-				58F3047724114D2AEEFD6652 /* [CP] Check Pods Manifest.lock */,
 				2EB7629B1D23BAC1005B7B93 /* Sources */,
 				2EB7629C1D23BAC1005B7B93 /* Frameworks */,
 				2EB7629D1D23BAC1005B7B93 /* Resources */,
-				A650CB0AAFC00EB2A4937388 /* [CP] Embed Pods Frameworks */,
-				25BD211075A9A4C7130A2D22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -274,11 +258,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EB762B91D23BAC1005B7B93 /* Build configuration list for PBXNativeTarget "Neighbor NinjaUITests" */;
 			buildPhases = (
-				BDED38958066C45E0B6D727D /* [CP] Check Pods Manifest.lock */,
 				2EB762A61D23BAC1005B7B93 /* Sources */,
 				2EB762A71D23BAC1005B7B93 /* Frameworks */,
 				2EB762A81D23BAC1005B7B93 /* Resources */,
-				86AA5C00495B8B893018F337 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -297,12 +279,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Samast Varma";
 				TargetAttributes = {
 					2EB762871D23BAC1005B7B93 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = JV267P8TC6;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -314,10 +297,12 @@
 					};
 					2EB7629E1D23BAC1005B7B93 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = 2EB762871D23BAC1005B7B93;
 					};
 					2EB762A91D23BAC1005B7B93 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = 2EB762871D23BAC1005B7B93;
 					};
 				};
@@ -347,7 +332,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E70B0231D23BBA000A52092 /* Info.plist in Resources */,
 				2EC52FF21D4075D400E1CD66 /* GoogleService-Info.plist in Resources */,
 				2E70B0201D23BBA000A52092 /* Main.storyboard in Resources */,
 				2E70B01E1D23BBA000A52092 /* Assets.xcassets in Resources */,
@@ -384,37 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		25BD211075A9A4C7130A2D22 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbor NinjaTests/Pods-Neighbor NinjaTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		58F3047724114D2AEEFD6652 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		702F3B692D8DF21C8740F2B1 /* [CP] Copy Pods Resources */ = {
@@ -432,21 +386,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbor Ninja/Pods-Neighbor Ninja-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		86AA5C00495B8B893018F337 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbor NinjaUITests/Pods-Neighbor NinjaUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8BF79ED8E3557C35BA75064A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,36 +401,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbor Ninja/Pods-Neighbor Ninja-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A650CB0AAFC00EB2A4937388 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Neighbor NinjaTests/Pods-Neighbor NinjaTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDED38958066C45E0B6D727D /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -501,10 +410,10 @@
 			files = (
 				2EC54BB81D2780D0002412AF /* SODAClient.swift in Sources */,
 				2EC54BB41D2780BE002412AF /* MapViewController.swift in Sources */,
-				2E70B02A1D23BBA000A52092 /* WelcomeScreen.swift in Sources */,
 				2EE65B701D27635F00F0FA84 /* Report.swift in Sources */,
 				2E70B01D1D23BBA000A52092 /* AppDelegate.swift in Sources */,
 				2EC54BB61D2780C8002412AF /* QueryViewController.swift in Sources */,
+				2E487CEB1E23782200CBD901 /* WelcomeScreen.swift in Sources */,
 				2E70B0221D23BBA000A52092 /* Home.swift in Sources */,
 				2E70B0291D23BBA000A52092 /* SWRevealViewController.m in Sources */,
 				2E70B0211D23BBA000A52092 /* CreateAccount.swift in Sources */,
@@ -578,8 +487,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -601,7 +512,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -624,8 +535,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -641,9 +554,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -653,17 +567,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B2AAF3E6C89C4438E76DDB4 /* Pods-Neighbor Ninja.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Neighbor Ninja/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getnninja.NeighborNinja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbor Ninja/Neighbor Ninja-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -671,65 +588,68 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 867311362C9CF0BFC8E5892C /* Pods-Neighbor Ninja.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Neighbor Ninja/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getnninja.NeighborNinja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Neighbor Ninja/Neighbor Ninja-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		2EB762B71D23BAC1005B7B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 383557B27AE0EA7E626A97DE /* Pods-Neighbor NinjaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Neighbor NinjaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samast-Varma.Neighbor-NinjaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neighbor Ninja.app/Neighbor Ninja";
 			};
 			name = Debug;
 		};
 		2EB762B81D23BAC1005B7B93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F84466A8F2E42806EC3ED05 /* Pods-Neighbor NinjaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Neighbor NinjaTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samast-Varma.Neighbor-NinjaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neighbor Ninja.app/Neighbor Ninja";
 			};
 			name = Release;
 		};
 		2EB762BA1D23BAC1005B7B93 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3A04D1300A64529FD2898FA /* Pods-Neighbor NinjaUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Neighbor NinjaUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samast-Varma.Neighbor-NinjaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Neighbor Ninja";
 			};
 			name = Debug;
 		};
 		2EB762BB1D23BAC1005B7B93 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F751803AC9A21023E69F148E /* Pods-Neighbor NinjaUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Neighbor NinjaUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Samast-Varma.Neighbor-NinjaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Neighbor Ninja";
 			};
 			name = Release;

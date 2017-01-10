@@ -25,11 +25,11 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     @IBOutlet weak var selectedCellLabel: UILabel!
     var menuView: BTNavigationDropdownMenu!
     
-    override func viewDidAppear(animated: Bool){
+    override func viewDidAppear(_ animated: Bool){
         
-        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(!isUserLoggedIn){
-            self.performSegueWithIdentifier("loginView", sender: self)
+            self.performSegue(withIdentifier: "loginView", sender: self)
         }
         self.navigationItem.hidesBackButton = true
         
@@ -43,43 +43,43 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         myPicker.delegate = self
         
         
-        var radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
+        var radius = UserDefaults.standard.float(forKey: "radius")
         self.radiusValue.text = "\(radius) m"
         
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green:100.0/255.0, blue:190.0/255.0, alpha: 1.0)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[1], items: items)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[1], items: items as [AnyObject])
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
         menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
-        menuView.keepSelectedCellColor = true
-        menuView.cellTextLabelColor = UIColor.whiteColor()
+        menuView.shouldKeepSelectedCellColor = true
+        menuView.cellTextLabelColor = UIColor.white
         menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
-        menuView.cellTextLabelAlignment = .Left // .Center // .Right // .Left
+        menuView.cellTextLabelAlignment = .left // .Center // .Right // .Left
         menuView.arrowPadding = 15
         menuView.animationDuration = 0.5
-        menuView.maskBackgroundColor = UIColor.blackColor()
+        menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.3
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
             self.selectedCellLabel.text = items[indexPath]
             if self.selectedCellLabel.text == "Home"{
-                self.performSegueWithIdentifier("reporttohome", sender: self)
+                self.performSegue(withIdentifier: "reporttohome", sender: self)
             }
             if self.selectedCellLabel.text == "View"{
-                self.performSegueWithIdentifier("reporttoview", sender: self)
+                self.performSegue(withIdentifier: "reporttoview", sender: self)
             }
             if self.selectedCellLabel.text == "Settings"{
-                self.performSegueWithIdentifier("reporttosettings", sender: self)
+                self.performSegue(withIdentifier: "reporttosettings", sender: self)
             }
             if self.selectedCellLabel.text == "Sign Off"{
-                NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
-                self.performSegueWithIdentifier("loginView", sender: self)
+                UserDefaults.standard.set(false, forKey:"isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+                self.performSegue(withIdentifier: "loginView", sender: self)
             }
         }
         
@@ -95,7 +95,7 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     }
 
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations.last
         let center = CLLocationCoordinate2D(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
@@ -104,87 +104,87 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         self.locationManager.stopUpdatingLocation()
         let currentLat = location!.coordinate.latitude
         let currentLng = location!.coordinate.longitude
-        NSUserDefaults.standardUserDefaults().setObject(currentLat, forKey: "currentLat")
-        NSUserDefaults.standardUserDefaults().setObject(currentLng, forKey: "currentLng")
+        UserDefaults.standard.set(currentLat, forKey: "currentLat")
+        UserDefaults.standard.set(currentLng, forKey: "currentLng")
         
         
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
     {
         print("Errors: " + error.localizedDescription)
     }
     
     //MARK: - Delegates and data sources
     //MARK: Data Sources
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
     //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         myLabel.text = pickerData[row]
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blueColor()])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blue])
         return myTitle
     }
     
     /* better memory management version */
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         var pickerLabel = view as! UILabel!
         if view == nil {  //if no label there yet
             pickerLabel = UILabel()
         }
         let titleData = pickerData[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.blackColor()])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 26.0)!,NSForegroundColorAttributeName:UIColor.black])
         pickerLabel!.attributedText = myTitle
-        pickerLabel!.textAlignment = .Center
-        NSUserDefaults.standardUserDefaults().setObject(titleData, forKey: "reportType")
+        pickerLabel!.textAlignment = .center
+        UserDefaults.standard.set(titleData, forKey: "reportType")
         
-        return pickerLabel
+        return pickerLabel!
         
     }
     
-    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
         return 36.0
     }
     // for best use with multitasking , dont use a constant here.
     //this is for demonstration purposes only.
-    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
         return 200
     }
     
     
-    @IBAction func submitButton(sender: AnyObject) {
-        let currentLat = NSUserDefaults.standardUserDefaults().floatForKey("currentLat")
-        let currentLng = NSUserDefaults.standardUserDefaults().floatForKey("currentLng")
-        let type = NSUserDefaults.standardUserDefaults().stringForKey("reportType")
-        let radius = NSUserDefaults.standardUserDefaults().floatForKey("radius")
-        let userID = NSUserDefaults.standardUserDefaults().integerForKey("userID")
+    @IBAction func submitButton(_ sender: AnyObject) {
+        let currentLat = UserDefaults.standard.float(forKey: "currentLat")
+        let currentLng = UserDefaults.standard.float(forKey: "currentLng")
+        let type = UserDefaults.standard.string(forKey: "reportType")
+        let radius = UserDefaults.standard.float(forKey: "radius")
+        let userID = UserDefaults.standard.integer(forKey: "userID")
         let radiusSent = radius/0.000621371
         
         let descriptionSent = descriptionText.text
 
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/crimeReport.php")!)
-        request.HTTPMethod = "POST"
+        var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/crimeReport.php")!)
+        request.httpMethod = "POST"
         let postString = "a=\(type!)&b=\(currentLat)&c=\(currentLng)&d=\(descriptionSent!)&e=\(radiusSent)&f=\(userID)"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        self.performSegueWithIdentifier("reporttohome", sender: self)
+        request.httpBody = postString.data(using: String.Encoding.utf8)
+        self.performSegue(withIdentifier: "reporttohome", sender: self)
         
-        let alert = UIAlertController(title: "Successfully Reported", message: "Suspicious activity was reported, and neighbors have been notified. Stay safe!", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        let alert = UIAlertController(title: "Successfully Reported", message: "Suspicious activity was reported, and neighbors have been notified. Stay safe!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {
             data, response, error in
             
             if error != nil {
@@ -195,10 +195,10 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
             
             print("response = \(response)")
             
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("responseString = \(responseString)")
             
-        }
+        }) 
         
         task.resume()
         

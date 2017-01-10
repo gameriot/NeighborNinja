@@ -1,24 +1,11 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '10.2'
 
 target 'Neighbor Ninja' do
-  pod 'BTNavigationDropdownMenu'
+  pod 'BTNavigationDropdownMenu', :git => 'https://github.com/PhamBaTho/BTNavigationDropdownMenu.git', :branch => 'swift-3.0'
   pod 'Firebase'
   pod 'Firebase/Messaging'
-  pod 'Alamofire', '~> 3.4'
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for Neighbor Ninja
-  use_frameworks!
-  target 'Neighbor NinjaTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Neighbor NinjaUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end

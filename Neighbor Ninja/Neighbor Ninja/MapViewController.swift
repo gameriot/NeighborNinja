@@ -2,13 +2,37 @@ import UIKit
 import MapKit
 import Foundation
 import BTNavigationDropdownMenu
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var selectedCellLabel: UILabel!
-    let addressLat = NSUserDefaults.standardUserDefaults().floatForKey("addressLat")
-    let addressLng = NSUserDefaults.standardUserDefaults().floatForKey("addressLng")
+    let addressLat = UserDefaults.standard.float(forKey: "addressLat")
+    let addressLng = UserDefaults.standard.float(forKey: "addressLng")
     
     var menuView: BTNavigationDropdownMenu!
 
@@ -23,50 +47,50 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let items = ["Home", "Report", "View", "Settings", "Sign Off"]
         self.selectedCellLabel.text = items.first
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 255.0/255.0, green:100.0/255.0, blue:190.0/255.0, alpha: 1.0)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
-        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[2], items: items)
+        menuView = BTNavigationDropdownMenu(navigationController: self.navigationController, title: items[2], items: items as [AnyObject])
         menuView.cellHeight = 50
         menuView.cellBackgroundColor = self.navigationController?.navigationBar.barTintColor
         menuView.cellSelectionColor = UIColor(red: 0.0/255.0, green:160.0/255.0, blue:195.0/255.0, alpha: 1.0)
-        menuView.keepSelectedCellColor = true
-        menuView.cellTextLabelColor = UIColor.whiteColor()
+        menuView.shouldKeepSelectedCellColor = true
+        menuView.cellTextLabelColor = UIColor.white
         menuView.cellTextLabelFont = UIFont(name: "Avenir-Heavy", size: 17)
-        menuView.cellTextLabelAlignment = .Left // .Center // .Right // .Left
+        menuView.cellTextLabelAlignment = .left // .Center // .Right // .Left
         menuView.arrowPadding = 15
         menuView.animationDuration = 0.5
-        menuView.maskBackgroundColor = UIColor.blackColor()
+        menuView.maskBackgroundColor = UIColor.black
         menuView.maskBackgroundOpacity = 0.3
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print("Did select item at index: \(indexPath)")
             self.selectedCellLabel.text = items[indexPath]
             if self.selectedCellLabel.text == "Report"{
-                self.performSegueWithIdentifier("viewtoreport", sender: self)
+                self.performSegue(withIdentifier: "viewtoreport", sender: self)
             }
             if self.selectedCellLabel.text == "Home"{
-                self.performSegueWithIdentifier("viewtohome", sender: self)
+                self.performSegue(withIdentifier: "viewtohome", sender: self)
             }
             if self.selectedCellLabel.text == "Settings"{
-                self.performSegueWithIdentifier("viewtosettings", sender: self)
+                self.performSegue(withIdentifier: "viewtosettings", sender: self)
             }
             if self.selectedCellLabel.text == "Sign Off"{
-                NSUserDefaults.standardUserDefaults().setBool(false, forKey:"isUserLoggedIn")
-                NSUserDefaults.standardUserDefaults().synchronize()
-                self.performSegueWithIdentifier("loginView", sender: self)
+                UserDefaults.standard.set(false, forKey:"isUserLoggedIn")
+                UserDefaults.standard.synchronize()
+                self.performSegue(withIdentifier: "loginView", sender: self)
             }
         }
         self.navigationItem.titleView = menuView
 
     }
     
-    func updateWithData(data: [[String: AnyObject]]!, animated: Bool) {
+    func updateWithData(_ data: [[String: AnyObject]]!, animated: Bool) {
         
         // Remember the data because we may not be able to display it yet
         self.data = data
         
-        if (!isViewLoaded()) {
+        if (!isViewLoaded) {
             return
         }
         
@@ -84,7 +108,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Create annotations for the data
         var anns : [MKAnnotation] = []
         for item in data {
-            if let loc: AnyObject! = (item["location_1"]!) {
+            if let loc: AnyObject? = (item["location_1"]!) {
 //                let lat = (item["latitude"]! as! NSString).doubleValue
 //                let lon = (item["longitude"]! as! NSString).doubleValue
                 
@@ -94,11 +118,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let locationString: String = "\(block) \(city) \(state)"
 //                print (locationString)
                 
-                var geocoder: CLGeocoder = CLGeocoder()
+                let geocoder: CLGeocoder = CLGeocoder()
                 geocoder.geocodeAddressString(locationString,completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
                     if (placemarks?.count > 0) {
-                        var topResult: CLPlacemark = (placemarks?[0])!
-                        var placemark: MKPlacemark = MKPlacemark(placemark: topResult)
+                        let topResult: CLPlacemark = (placemarks?[0])!
+                        let placemark: MKPlacemark = MKPlacemark(placemark: topResult)
                         let lat = placemark.coordinate.latitude
                         let lng = placemark.coordinate.longitude
                         let latUsed = Double(lat)
@@ -120,7 +144,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                         }
                     }
                 
-                })
+                } as! CLGeocodeCompletionHandler)
                 
             }
 

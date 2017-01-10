@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>BTNavigationDropdownMenu.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>BTNavigationDropdownMenu.xcscheme</key>
+		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -19,40 +19,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Neighbor NinjaTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Neighbor NinjaUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>68586C57FF41852222699FF89864EF3F</key>
+		<key>A52524E727A97710A55D0EDA55BB7CFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>C5B80060FE8C664DF08841000F41D515</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ECEDDF33BE538214EACE29330302C2F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE3D4791A6B07A929BD279AFB195986D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FD23F1DA220A44C7E84F356B64871271</key>
+		<key>D9D499743BF186F3D3A95C77B61D9476</key>
 		<dict>
 			<key>primary</key>
 			<true/>

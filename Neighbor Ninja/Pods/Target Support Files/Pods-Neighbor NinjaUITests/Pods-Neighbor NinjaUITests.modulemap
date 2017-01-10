@@ -1,6 +1,0 @@
-framework module Pods_Neighbor_NinjaUITests {
-  umbrella header "Pods-Neighbor NinjaUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

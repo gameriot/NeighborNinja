@@ -8,6 +8,30 @@
 
 import UIKit
 import MapKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -15,7 +39,7 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     @IBOutlet weak var EmailField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var AddressField: UITextField!
-    @IBAction func CreateAccButton(sender: UIButton) {
+    @IBAction func CreateAccButton(_ sender: UIButton) {
         // check if fields are empty 
         
         let userName = NameField.text!
@@ -33,38 +57,37 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
                 let lng = placemark.coordinate.longitude
                 let addressLat = Float(lat)
                 let addressLng = Float(lng)
-                NSUserDefaults.standardUserDefaults().setFloat(addressLat, forKey: "addressLat")
-                NSUserDefaults.standardUserDefaults().setFloat(addressLng, forKey: "addressLng")
-                NSUserDefaults.standardUserDefaults().setObject(10000, forKey: "radius")
+                UserDefaults.standard.set(addressLat, forKey: "addressLat")
+                UserDefaults.standard.set(addressLng, forKey: "addressLng")
+                UserDefaults.standard.set(10000, forKey: "radius")
 //                print (addressLat)
 //                print (addressLng)
             }
-        })
+        } as! CLGeocodeCompletionHandler)
         
             
         
         // store data
         
-        NSUserDefaults.standardUserDefaults().setObject(userEmail, forKey: "userEmail")
-        NSUserDefaults.standardUserDefaults().setObject(userPassword, forKey: "userPassword")
-        NSUserDefaults.standardUserDefaults().setObject(userName, forKey: "userName")
-        NSUserDefaults.standardUserDefaults().setObject(userAddress, forKey: "userAddress")
+        UserDefaults.standard.set(userEmail, forKey: "userEmail")
+        UserDefaults.standard.set(userPassword, forKey: "userPassword")
+        UserDefaults.standard.set(userName, forKey: "userName")
+        UserDefaults.standard.set(userAddress, forKey: "userAddress")
         
 //        send data
 //
-        let addressLat = NSUserDefaults.standardUserDefaults().floatForKey("addressLat")
-        let addressLng = NSUserDefaults.standardUserDefaults().floatForKey("addressLng")
+        let addressLat = UserDefaults.standard.float(forKey: "addressLat")
+        let addressLng = UserDefaults.standard.float(forKey: "addressLng")
         print (addressLat)
         print (addressLng)
 
-        
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/createAcc.php")!)
-        request.HTTPMethod = "POST"
+        var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/createAcc.php")!)
+        request.httpMethod = "POST"
         let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat))&f=\(addressLng)"
         print (postString)
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        request.httpBody = postString.data(using: String.Encoding.utf8)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+        let task = URLSession.shared.dataTask(with: request, completionHandler: {
             data, response, error in
             
             if error != nil {
@@ -75,12 +98,12 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
             
             print("response = \(response)")
             
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("responseString = \(responseString)")
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "isUserLoggedIn")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+            UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            UserDefaults.standard.synchronize()
+            self.dismiss(animated: true, completion: nil)
+        }) 
         task.resume()
 
         
@@ -92,11 +115,11 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateAccount.DismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        var swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "unwindSegue")
-        swipe.direction = .Right
+        let swipe: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(CreateAccount.unwindSegue))
+        swipe.direction = .right
         view.addGestureRecognizer(swipe)
         
         NameField.becomeFirstResponder()
@@ -108,7 +131,7 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     }
     
     func unwindSegue(){
-        self.performSegueWithIdentifier("unwindCreate", sender: nil)
+        self.performSegue(withIdentifier: "unwindCreate", sender: nil)
         
     }
     
