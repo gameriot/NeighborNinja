@@ -22,7 +22,7 @@ class SignIn: UIViewController {
         
         UserDefaults.standard.set(userEmail, forKey: "userEmail")
         
-        var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/loginAcc.php")!)
+        var request = URLRequest(url: URL(string: "http://getnninja.com/server/loginAcc.php")!)
         request.httpMethod = "POST"
         let postString = "a=\(userEmail)&b=\(userPassword)"
         request.httpBody = postString.data(using: String.Encoding.utf8)
@@ -49,7 +49,9 @@ class SignIn: UIViewController {
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 UserDefaults.standard.synchronize()
                 
-                self.performSegue(withIdentifier: "loginToMain", sender: nil)
+                OperationQueue.main.addOperation {
+                    self.performSegue(withIdentifier: "loginToMain", sender: nil)
+                }
             }
         }) 
         task.resume()

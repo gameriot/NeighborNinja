@@ -80,44 +80,7 @@ class Home: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
         
     }
-    
-//    override func viewDidAppear(animated: Bool){
-//        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
-//        if(!isUserLoggedIn){
-//            self.performSegueWithIdentifier("loginView", sender: self)
-//        }
-//        else {
-//            
-//            
-//            let userEmail = NSUserDefaults.standardUserDefaults().stringForKey("userEmail")!
-//            print (userEmail)
-//            let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
-//            request.HTTPMethod = "POST"
-//            let postString = "a=\(userEmail)"
-//            request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-//            
-//            let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-//                data, response, error in
-//                
-//                if error != nil {
-//                    print("error=\(error)")
-//                    return
-//                }
-//                
-//                
-//                print("response = \(response)!")
-//                
-//                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                print("responseString = \(responseString!)")
-//                NSUserDefaults.standardUserDefaults().setObject(responseString, forKey: "userID")
-//                //let userID = NSUserDefaults.standardUserDefaults().stringForKey("userID")!
-//                
-//            }
-//            task.resume()
-//            
-//        }
-//        
-//    }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {

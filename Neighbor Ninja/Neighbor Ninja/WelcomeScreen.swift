@@ -16,7 +16,7 @@ class WelcomeScreen: UIViewController {
             
             let userEmail = UserDefaults.standard.string(forKey: "userEmail")!
             print (userEmail)
-            var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/userID.php")!)
+            var request = URLRequest(url: URL(string: "http://getnninja.com/server/userID.php")!)
             request.httpMethod = "POST"
             let postString = "a=\(userEmail)"
             request.httpBody = postString.data(using: String.Encoding.utf8)

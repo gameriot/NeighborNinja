@@ -81,7 +81,7 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         print (addressLat)
         print (addressLng)
 
-        var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/createAcc.php")!)
+        var request = URLRequest(url: URL(string: "http://getnninja.com/server/createAcc.php")!)
         request.httpMethod = "POST"
         let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat))&f=\(addressLng)"
         print (postString)

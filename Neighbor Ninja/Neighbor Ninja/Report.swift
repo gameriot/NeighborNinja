@@ -174,7 +174,7 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         
         let descriptionSent = descriptionText.text
 
-        var request = URLRequest(url: URL(string: "http://ec2-54-215-141-57.us-west-1.compute.amazonaws.com/crimeReport.php")!)
+        var request = URLRequest(url: URL(string: "http://getnninja.com/server/crimeReport.php")!)
         request.httpMethod = "POST"
         let postString = "a=\(type!)&b=\(currentLat)&c=\(currentLng)&d=\(descriptionSent!)&e=\(radiusSent)&f=\(userID)"
         request.httpBody = postString.data(using: String.Encoding.utf8)

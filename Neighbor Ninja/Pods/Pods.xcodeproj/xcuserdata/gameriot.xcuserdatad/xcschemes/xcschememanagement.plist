@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GoogleToolboxForMac.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Neighbor Ninja.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>86121ACB4EA4F127502A673E60BD5803</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A52524E727A97710A55D0EDA55BB7CFE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5B80060FE8C664DF08841000F41D515</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D9D499743BF186F3D3A95C77B61D9476</key>
 		<dict>
 			<key>primary</key>
 			<true/>
