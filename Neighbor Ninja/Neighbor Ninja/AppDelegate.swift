@@ -44,8 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Print it to console
         print("APNs device token: \(deviceTokenString)")
-        
+        UserDefaults.standard.set(deviceTokenString, forKey: "tokenGlobal")
         // Persist it in your backend in case it's new
+      
     }
     
     // Called when APNs failed to register the device for push notifications

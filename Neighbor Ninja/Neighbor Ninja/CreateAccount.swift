@@ -39,33 +39,35 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
     @IBOutlet weak var EmailField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var AddressField: UITextField!
-    @IBAction func CreateAccButton(_ sender: UIButton) {
-        // check if fields are empty 
-        
+    
+    private func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
         let userName = NameField.text!
         let userEmail = EmailField.text!
         let userPassword = PasswordField.text!
         let userAddress = AddressField.text!
-        
-        var address: String = userAddress
-        var geocoder: CLGeocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address,completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
-            if (placemarks?.count > 0) {
-                var topResult: CLPlacemark = (placemarks?[0])!
-                var placemark: MKPlacemark = MKPlacemark(placemark: topResult)
-                let lat = placemark.coordinate.latitude
-                let lng = placemark.coordinate.longitude
-                let addressLat = Float(lat)
-                let addressLng = Float(lng)
+        if let error = error {
+            print("Unable to Forward Geocode Address (\(error))")
+            print("Unable to Find Location for Address")
+            
+        } else {
+            var location: CLLocation?
+            
+            if let placemarks = placemarks, placemarks.count > 0 {
+                location = placemarks.first?.location
+            }
+            
+            if let location = location {
+                let coordinate = location.coordinate
+                print("\(coordinate.latitude), \(coordinate.longitude)")
+                let addressLat = coordinate.latitude
+                let addressLng = coordinate.longitude
                 UserDefaults.standard.set(addressLat, forKey: "addressLat")
                 UserDefaults.standard.set(addressLng, forKey: "addressLng")
                 UserDefaults.standard.set(10000, forKey: "radius")
-//                print (addressLat)
-//                print (addressLng)
+            } else {
+                print("No Matching Location Found")
             }
-        } as! CLGeocodeCompletionHandler)
-        
-            
+        }
         
         // store data
         
@@ -74,16 +76,19 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         UserDefaults.standard.set(userName, forKey: "userName")
         UserDefaults.standard.set(userAddress, forKey: "userAddress")
         
-//        send data
-//
+        //        send data
+        //
         let addressLat = UserDefaults.standard.float(forKey: "addressLat")
         let addressLng = UserDefaults.standard.float(forKey: "addressLng")
+        let token = UserDefaults.standard.string(forKey: "tokenGlobal")
+        print(token!)
         print (addressLat)
         print (addressLng)
-
+        
+        
         var request = URLRequest(url: URL(string: "http://getnninja.com/server/createAcc.php")!)
         request.httpMethod = "POST"
-        let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat))&f=\(addressLng)"
+        let postString = "a=\(userName)&b=\(userEmail)&c=\(userPassword)&d=\(userAddress)&e=\(addressLat))&f=\(addressLng)&g=\(token!)"
         print (postString)
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
@@ -102,17 +107,36 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
             print("responseString = \(responseString)")
             UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
             UserDefaults.standard.synchronize()
-            self.dismiss(animated: true, completion: nil)
-        }) 
+            OperationQueue.main.addOperation {
+                self.performSegue(withIdentifier: "createToMain", sender: nil)
+            }
+        })
         task.resume()
-
-        
-        
-
     }
+    
+    
+    @IBAction func CreateAccButton(_ sender: UIButton) {
+        // check if fields are empty 
+
+        let userAddress = AddressField.text!
+        
+        var address: String = userAddress
+        
+        var geocoder: CLGeocoder = CLGeocoder()
+        // Geocode Address String
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            // Process Response
+            self.processResponse(withPlacemarks: placemarks, error: error)
+        }
+        var location: CLLocation?
+        
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateAccount.DismissKeyboard))

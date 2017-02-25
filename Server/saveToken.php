@@ -10,18 +10,12 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
-	$name = $_POST['a'];
-	$email = $_POST['b'];
-	$pass = $_POST['c'];
-	$address = $_POST['d'];
-	$lat = $_POST['e'];
-	$lng = $_POST['f'];
-	$token = $_POST['g'];
+	$token = $_POST['a'];
 
 echo $lat;
 echo $lng;
 
-$query = "INSERT INTO users (name, email, password, address, lat, lng, token) VALUES ('$name','$email','$pass','$address', '$lat', '$lng', '$token')";
+$query = "INSERT INTO users (token) VALUES ('$token')";
 
 if (!mysqli_query($con, $query)) 
 {
