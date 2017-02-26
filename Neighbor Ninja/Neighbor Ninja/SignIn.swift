@@ -48,7 +48,6 @@ class SignIn: UIViewController {
                 print ("Account found")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 UserDefaults.standard.synchronize()
-                
                 OperationQueue.main.addOperation {
                     self.performSegue(withIdentifier: "loginToMain", sender: nil)
                 }

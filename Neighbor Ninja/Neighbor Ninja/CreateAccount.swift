@@ -33,12 +33,13 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var NameField: UITextField!
     @IBOutlet weak var EmailField: UITextField!
     @IBOutlet weak var PasswordField: UITextField!
     @IBOutlet weak var AddressField: UITextField!
+    @IBOutlet weak var ScrollView: UIScrollView!
     
     private func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
         let userName = NameField.text!
@@ -165,6 +166,19 @@ class CreateAccount: UIViewController, MKMapViewDelegate, CLLocationManagerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        if (textField == AddressField) {
+//            ScrollView.setContentOffset(CGPoint(x: 0, y: 150), animated: true)
+//        }
+//    }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        ScrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+//    }
 }
 
