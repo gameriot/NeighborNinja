@@ -197,10 +197,10 @@ class Report: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
             
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             print("responseString = \(responseString)")
-            
-        }) 
+        })
         
         task.resume()
+        
         
     }
     
