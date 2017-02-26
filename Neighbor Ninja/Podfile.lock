@@ -1,8 +1,10 @@
 PODS:
   - BTNavigationDropdownMenu (0.4.1)
+  - IQKeyboardManagerSwift (4.0.8)
 
 DEPENDENCIES:
   - BTNavigationDropdownMenu (from `https://github.com/PhamBaTho/BTNavigationDropdownMenu.git`, branch `swift-3.0`)
+  - IQKeyboardManagerSwift
 
 EXTERNAL SOURCES:
   BTNavigationDropdownMenu:
@@ -16,7 +18,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BTNavigationDropdownMenu: 093f3cbfad1572f2c222bdf8d17584d1e13380d4
+  IQKeyboardManagerSwift: c04bc9f68473823f825eb44d958fce98d921bead
 
-PODFILE CHECKSUM: 66c4eed647e2aba94e5bc55a65efd5c84940f1b5
+PODFILE CHECKSUM: c1b08c18068c9cf36de541ffb9905c99229f5f85
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
