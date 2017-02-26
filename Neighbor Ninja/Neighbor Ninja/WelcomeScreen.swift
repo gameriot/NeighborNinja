@@ -10,7 +10,12 @@ import UIKit
 
 class WelcomeScreen: UIViewController {
     
+    @IBOutlet weak var icon: UIImageView!
     override func viewDidLoad() {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background")!)
+        UIView.animate(withDuration: 2.0, delay: 0.3, options: [.repeat], animations: {
+            self.icon.transform = CGAffineTransform(rotationAngle: (180.0 * CGFloat(M_PI)) / 180.0)
+        })
         let isUserLoggedIn = UserDefaults.standard.bool(forKey: "isUserLoggedIn")
         if(isUserLoggedIn){
             

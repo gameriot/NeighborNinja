@@ -27,7 +27,7 @@ $R = 6371;
     $minLng = $lng - rad2deg(asin($rad/$R) / cos(deg2rad($lat)));
 
 $query = "INSERT INTO `crimereport` (type, lat, lng, description, userID) VALUES ('$type','$lat','$lng','$description', '$userID');";
-$query .= "SELECT ID from `users` WHERE (lat BETWEEN '$minLat' AND '$maxLat') AND (lng BETWEEN '$minLng' AND '$maxLng')";
+$query .= "SELECT token from `users` WHERE (lat BETWEEN '$minLat' AND '$maxLat') AND (lng BETWEEN '$minLng' AND '$maxLng')";
 
 
 if (mysqli_multi_query($con, $query)) {

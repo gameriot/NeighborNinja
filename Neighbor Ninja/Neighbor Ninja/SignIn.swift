@@ -59,6 +59,7 @@ class SignIn: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named:"background")!)
         // Do any additional setup after loading the view, typically from a nib.
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignIn.DismissKeyboard))

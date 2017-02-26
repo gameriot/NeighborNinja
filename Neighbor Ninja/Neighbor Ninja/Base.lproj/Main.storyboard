@@ -77,6 +77,7 @@
                         <barButtonItem key="backBarButtonItem" title="Home" id="EWC-df-KSk"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="icon" destination="i4q-6L-4ni" id="aHZ-J3-GKL"/>
                         <segue destination="rbb-bE-mHs" kind="show" identifier="WelcometoCreate" id="oDp-Bw-EuQ"/>
                         <segue destination="ccS-yy-FIn" kind="show" identifier="WelcometoSign" id="ifZ-eB-4SP"/>
                         <segue destination="fmG-hf-zRL" kind="show" identifier="loginSegue" id="01j-0B-NYa"/>
@@ -84,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXB-71-5tF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2018.5" y="-1379.5"/>
+            <point key="canvasLocation" x="2018.4000000000001" y="-1380.3598200899551"/>
         </scene>
         <!--Create Account-->
         <scene sceneID="cbR-Qw-on0">
@@ -153,7 +154,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="QYS-oU-F0O" firstAttribute="top" secondItem="8zf-8c-rop" secondAttribute="bottom" constant="25" id="EP6-6P-f7p"/>
                                                     <constraint firstAttribute="trailing" secondItem="8zf-8c-rop" secondAttribute="trailing" constant="25" id="GDJ-7a-wQv"/>
@@ -179,7 +179,6 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="8n5-vQ-82d" firstAttribute="leading" secondItem="YIy-VN-7nn" secondAttribute="leading" constant="8" id="2Nh-Lr-pzk"/>
                                             <constraint firstAttribute="bottom" secondItem="8n5-vQ-82d" secondAttribute="bottom" constant="8" id="JM4-R0-4Ld"/>
@@ -196,7 +195,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="x6e-ZN-zyS" secondAttribute="trailing" constant="-20" id="B7d-ta-1If"/>
                             <constraint firstItem="x6e-ZN-zyS" firstAttribute="leading" secondItem="oRm-EF-mmw" secondAttribute="leadingMargin" constant="-20" id="Vnl-Ww-xXe"/>
@@ -266,7 +264,6 @@
                                                         <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="XHK-A6-fYr" secondAttribute="trailing" constant="25" id="12c-aP-b4a"/>
                                                     <constraint firstItem="XHK-A6-fYr" firstAttribute="top" secondItem="A1y-oc-E3F" secondAttribute="top" constant="50" id="2oq-Pl-g5W"/>
@@ -281,7 +278,6 @@
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="A1y-oc-E3F" secondAttribute="trailing" constant="8" id="Vdb-dR-etg"/>
                                             <constraint firstItem="A1y-oc-E3F" firstAttribute="leading" secondItem="plu-8N-gS0" secondAttribute="leading" constant="8" id="nAJ-BS-VEN"/>
@@ -298,7 +294,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="C6A-7u-2ln" firstAttribute="top" secondItem="eRf-f0-x39" secondAttribute="top" id="Gc0-hb-ql5"/>
                             <constraint firstAttribute="trailing" secondItem="C6A-7u-2ln" secondAttribute="trailing" id="Isq-nz-npr"/>
