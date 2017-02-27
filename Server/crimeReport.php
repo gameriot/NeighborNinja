@@ -36,6 +36,7 @@ if (mysqli_multi_query($con, $query)) {
         if ($result = mysqli_store_result($con)) {
             while ($row = mysqli_fetch_row($result)) {
                 printf("%s\n", $row[0]);
+                include('newspush.php');
             }
             mysqli_free_result($result);
         }
@@ -48,4 +49,5 @@ if (mysqli_multi_query($con, $query)) {
 
 /* close connection */
 $mysqli->close();
+
 ?>
